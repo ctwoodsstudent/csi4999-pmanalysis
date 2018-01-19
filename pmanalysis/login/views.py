@@ -1,12 +1,7 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+
 
 # Create your views here.
 def index(request):
-    """
-    View function for home page of site.
-    """
-    # Render the HTML template index.html with the data in the context variable
-    return render(
-        request,
-        'index.html'
-    )
+    return HttpResponse("Hello, world. You're at the login index.")
