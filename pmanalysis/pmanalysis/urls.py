@@ -14,20 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include, path
-from django.contrib.auth import views as auth_views
-from pmanalysis.signup import views as core_views
+from django.urls import path
+from django.conf.urls import url
+from signup import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
-
-urlpatterns += [
-    path(r'^$', core_views.home, name='home'),
-    path(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
-    path(r'^logout/$', auth_views.logout, {'next_page': 'login'}, name='logout'),
-    path(r'^signup/$', core_views.signup, name='signup'),
-    path(r'^account_activation_sent/$', core_views.account_activation_sent, name='account_activation_sent'),
-    path(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
-        core_views.activate, name='activate'),
+    #url(r'^$', views.home, name='home'),
+    url(r'^signup/$', views.signup, name='signup'),
+    url(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+        views.activate, name='activate'),
 ]
