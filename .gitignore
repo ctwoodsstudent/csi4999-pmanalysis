@@ -1,2 +1,5 @@
 *.pyc
 *.pyo
+.idea
+pmanalysis/.DS_Store
+venv
