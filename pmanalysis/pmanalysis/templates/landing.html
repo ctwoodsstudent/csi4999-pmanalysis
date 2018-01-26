@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static "css/landing.css" %}">
+    <meta charset="UTF-8">
+    <title>PM Analysis</title>
+
+</head>
+<body>
+    <div class="navbarContainer">
+        <div>
+        </div>
+        <div class="navbarControlContainer">
+            <div class="navBarButtonContainer">
+                <a href="{% url 'signin' %}" class="landingButton">
+                    Log in
+                </a>
+            </div>
+            <div class="navBarButtonContainer">
+                <a href="{% url 'signup' %}" class="landingButton">
+                    Sign up
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <div class="landingBodyContainer">
+
+
+
+    </div>
+
+</body>
+</html>
