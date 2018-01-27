@@ -4,6 +4,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="{% static "css/landing.css" %}">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Ubuntu+Condensed" rel="stylesheet">
     <meta charset="UTF-8">
     <title>PM Analysis</title>
 
@@ -26,9 +27,139 @@
         </div>
 
     </div>
-    <div class="landingBodyContainer">
+
+    <div class="landingBodyControlContainer">
+
+        <div class="landingBodyContainer">
+
+            <div>
+
+                <img src="{% static 'images/landingPage.jpg' %}" alt="landingPage" style="
+                    width: 100%;
+                    height: auto;
+                    max-height:  500px;
+                    object-fit:  cover;"/>
+
+            </div>
+
+            <div class="content12">
+
+                <h1 class="content">PM Analysis</h1>
+
+                <p class="content2">Our vision is to create a statistical tool capable of analyzing phenotype
+                    microarrays for biologists.
+                </p>
+                <p class="content3">
+                    This is still an emerging technology, and we believe advancement will greatly help with the discovery
+                    and analysis of genetic disease.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="landingBodyContainer">
+
+            <h1 class="content4">About Us</h1>
+
+            <div class="content5">
+
+                <img class="teamMembers" src="{% static 'images/blankTeam.jpg' %}" alt="teamMembers">
+
+                <p>
+                    The mastermind: Quentin Maltman
+                </p>
+
+                <p class="content10">
+                    Quentin Maltman is a CS student at Oakland University, and he is the drving force behind PM Analysis.
+                    PM Analysis is the brain child of Quentin, he is following a bioinformatics track and is passionate
+                    about the field.
+                </p>
+
+            </div>
+
+            <div class="content6">
+
+                <img class="teamMembers" src="{% static 'images/blankTeam.jpg' %}" alt="teamMembers">
+
+                <p>
+                    The code talker: Kendon Cowart
+                </p>
+
+                <p class="content10">
+                    Kendon Cowart is a CS student at Oakland University. He is our primary back end developer, responsible
+                    for making sure everything runs smoothly behind the scenes.
+                </p>
+
+            </div>
+
+            <div class="content7">
+
+                <img class="teamMembers" src="{% static 'images/blankTeam.jpg' %}" alt="teamMembers">
+
+                <p>
+                    The guru: Larisa Garmo
+                </p>
+
+                <p class="content10">
+                    Larisa Garmo is an IT student at Oakland University. She is one of our front end developers and project
+                    managers. She assits in all you see here as the user, as well as some database work.
+                </p>
+
+            </div>
+
+            <div class="content8">
+
+                <img class="teamMembers" src="{% static 'images/blankTeam.jpg' %}" alt="teamMembers">
+
+                <p>
+                    The manager: Valerie Jarbo
+                </p>
+
+                <p class="content10">
+                    Valerie Jarbo is an IT student at Oakland University, also preparing to graduate in April 2018. Valerie
+                    is responcible for part of our front end development and our inital concepts and mockups. She helped to
+                    form the whole project into one cohesive plan.
+                </p>
+
+            </div>
+
+            <div class="content9">
+
+                <img class="teamMembers" src="{% static 'images/blankTeam.jpg' %}" alt="teamMembers">
+
+                <p>
+                    The trailblazer: Courtney Woods
+                </p>
+
+                <p class="content10">
+                    Courtney Woods is an IT student at Oakland University who will also graduate in April 2018. Courtney
+                    is our front end developer and project manager. She helped to develope the user stores and requirements
+                    for PM Analysis as well as development and functionality you see here.
+                </p>
+
+            </div>
+
+            <div class="landingBodyContainer">
+
+                <div class="content11">
+
+                    <h3>
+                        Start analyzing data today!
+                    </h3>
+
+                    <div class="bottomButtonContainer">
+                         <a href="{% url 'signup' %}" class="bottomButton">
+                            Sign up
+                         </a>
+                    </div>
 
 
+                </div>
+
+        </div>
+
+        </div>
 
     </div>
 
