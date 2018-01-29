@@ -1,26 +1,70 @@
-{% block content %}
 {% load static %}
 
-    <head>
-        <link rel="stylesheet" type="text/css" href="{% static "css/signup.css" %}">
-    </head>
-    <div class="loginPageBody">
-      <h2>Sign up</h2>
-      <form method="post">
-        {% csrf_token %}
-          {% for field in form %}
-          <p>
-            {{ field.label_tag }}<br>
-            {{ field }}
-            {% if field.help_text %}
-              <small style="display: none">{{ field.help_text }}</small>
-            {% endif %}
-            {% for error in field.errors %}
-              <p style="color: red">{{ error }}</p>
-            {% endfor %}
-          </p>
-          {% endfor %}
-        <button type="submit">Sign up</button>
-      </form>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static "css/signup.css" %}">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Ubuntu+Condensed" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>PM Analysis</title>
+</head>
+
+<body class="signupBody">
+{% block content %}
+
+    <img src="{% static 'images/landingPage.jpg' %}" alt="landingPage" style="
+                    width: 100%;
+                    height: auto;
+                    object-fit:  cover;"/>
+
+    <div class="signupPageContainer">
+
+        <div class="signupPageElement1">
+
+            <h2 class="content1">Sign up</h2>
+
+        </div>
+
+            <div class="signupPageElement2">
+
+                <form method="post">
+
+                    {% csrf_token %}
+
+                    {% for field in form %}
+
+                        <p class="content2">
+                            {{ field.label_tag }}<br>
+                            {{ field }}
+
+                            {% if field.help_text %}
+
+                                <small style="display: none">{{ field.help_text }}</small>
+
+                            {% endif %}
+
+                            {% for error in field.errors %}
+
+                                <p style="color: red">{{ error }}</p>
+
+                            {% endfor %}
+
+                        </p>
+
+                    {% endfor %}
+
+                    <button type="submit" class="content1">Sign up</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
 {% endblock %}
+</body>
+</html>
+
+
+
