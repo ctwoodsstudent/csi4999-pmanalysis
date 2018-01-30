@@ -14,7 +14,7 @@ def landing(request):
     return render(request, 'landing.html')
 
 def signin(request):
-    return HttpResponse('Please make a signin page - thanks bro')
+    return render( request, 'signin.html')
 
 def signup(request):
     if request.method == 'POST':

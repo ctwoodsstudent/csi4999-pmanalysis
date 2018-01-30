@@ -26,41 +26,41 @@
 
         </div>
 
-            <div class="signupPageElement2">
+        <div class="signupPageElement2">
 
-                <form method="post">
+            <form method="post">
 
-                    {% csrf_token %}
+                {% csrf_token %}
 
-                    {% for field in form %}
+                {% for field in form %}
 
-                        <p class="content2">
-                            {{ field.label_tag }}<br>
-                            {{ field }}
+                    <p class="content2">
+                        {{ field.label_tag }}<br>
+                        {{ field }}
 
-                            {% if field.help_text %}
+                        {% if field.help_text %}
 
-                                <small style="display: none">{{ field.help_text }}</small>
+                            <small style="display: none">{{ field.help_text }}</small>
 
-                            {% endif %}
+                        {% endif %}
 
-                            {% for error in field.errors %}
+                        {% for error in field.errors %}
 
-                                <p style="color: red">{{ error }}</p>
+                            <p style="color: red">{{ error }}</p>
 
-                            {% endfor %}
+                        {% endfor %}
 
-                        </p>
+                    </p>
 
-                    {% endfor %}
+                {% endfor %}
 
-                    <button type="submit" class="content1">Sign up</button>
+                <button type="submit" class="content1">Sign up</button>
 
-                </form>
-
-            </div>
+            </form>
 
         </div>
+
+    </div>
 
 {% endblock %}
 </body>
