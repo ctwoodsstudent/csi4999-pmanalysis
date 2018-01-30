@@ -1,0 +1,23 @@
+.signupBody {
+    display: flex;
+    justify-content: center;
+}
+
+.signupPageContainer{
+    position: absolute;
+    top: 15%;
+    background-color: lightblue;
+    padding: 50px;
+}
+
+.content1{
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 25px;
+}
+
+.content2{
+    font-size: 15px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-weight: bold;
+
+}

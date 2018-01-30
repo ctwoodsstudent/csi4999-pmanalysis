@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'yt!pr@^jrke48zpnj)4n4s3m)ff!$ep^i#dji^6x7w)3k-9x7m'
+SECRET_KEY = 'l$48i3_1z(fe&xj(orf&nbtr57i#tlxvmkjvwe)t@pgvd6g)*m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -51,10 +51,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'pmanalysis.urls'
 
+SETTINGS_PATH = os.path.realpath(os.path.dirname(__file__))
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(SETTINGS_PATH, 'templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -116,5 +117,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
-
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'PMAnalysisproject@gmail.com'
+EMAIL_HOST_PASSWORD = 'PMAnalysis012018'
+EMAIL_PORT = 587

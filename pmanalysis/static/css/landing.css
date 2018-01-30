@@ -1,0 +1,170 @@
+.navbarContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(0,0,0,0);
+    position: fixed;
+    width: 100%;
+}
+.navbarControlContainer {
+	display: flex;
+	flex-direction: row;
+	height: 60px;
+}
+
+.navBarButtonContainer {
+    margin-left: 15px;
+	margin-right: 15px;
+}
+
+.bottomButtonContainer{
+    margin-left: 15px;
+	margin-right: 15px;
+}
+
+.bottomButton{
+    background: white;
+	border-radius: 10px;
+	color: darkslategrey;
+	height: 100px;
+	text-decoration: none;
+	font-size: 50px;
+	margin: 23px 0 23px 14px;
+	padding-left: 20px;
+	padding-right: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+	cursor: pointer;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    margin-right: inherit;
+    font-weight: bold;
+}
+
+.landingButton {
+    background: black;
+	border-radius: 10px;
+	color: White;
+	height: 34px;
+	text-decoration: none;
+	display: block;
+	font-size: 28px;
+	margin: 23px 0 23px 14px;
+	padding-left: 20px;
+	padding-right: 20px;
+	cursor: pointer;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    margin-right: inherit;
+}
+
+.landingBodyContainer {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 100;
+
+}
+
+.landingBodyControlContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content{
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    font-size: 60px;
+    transform: translate(-50%, -50%);
+    font-family: 'Archivo Black', sans-serif;
+}
+
+.content2{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    font-size: 20px;
+    transform: translate(-50%, -50%);
+    font-family: 'Ubuntu Condensed', sans-serif;
+    text-align: center;
+}
+
+.content3{
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    font-size: 20px;
+    transform: translate(-50%, -50%);
+    font-family: 'Ubuntu Condensed', sans-serif;
+    text-align: center;
+}
+
+.content4{
+    left: 50%;
+    font-size: 60px;
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+}
+
+.content5{
+    left: 50%;
+    font-size: 20px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    text-align: center;
+}
+
+.content6{
+    left: 50%;
+    font-size: 20px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    text-align: center;
+}
+
+.content7{
+    left: 50%;
+    font-size: 20px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    text-align: center;
+}
+
+.content8{
+    left: 50%;
+    font-size: 20px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    text-align: center;
+}
+
+.content9{
+    left: 50%;
+    font-size: 20px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    text-align: center;
+}
+
+.content10{
+    left: 50%;
+    width: 50%;
+    transform: translate(50%);
+    font-size: 15px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    text-align: center;
+}
+
+.content11{
+    left: 50%;
+    font-size: 60px;
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+    background-color: lightblue;
+    padding-bottom: 100px;
+}
+
+.teamMembers{
+    border-radius: 50%;
+}
+
+
+
