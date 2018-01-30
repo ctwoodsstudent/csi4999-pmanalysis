@@ -1,0 +1,16 @@
+.signinBody {
+    display: flex;
+    justify-content: center;
+}
+
+.signinPageContainer{
+    position: absolute;
+    top: 15%;
+    background-color: lightblue;
+    padding: 50px;
+}
+
+.content1{
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 25px;
+}

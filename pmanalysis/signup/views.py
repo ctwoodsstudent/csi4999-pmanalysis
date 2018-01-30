@@ -14,7 +14,7 @@ def landing(request):
     return render(request, 'landing.html')
 
 def signin(request):
-    return HttpResponse('Please make a signin page - thanks bro')
+    return render(request, 'signin.html')
 
 def signup(request):
     if request.method == 'POST':
@@ -25,7 +25,7 @@ def signup(request):
             user.save()
             current_site = get_current_site(request)
             mail_subject = 'Activate your blog account.'
-            message = render_to_string('acc_active_email.html', {
+            message = render_to_string('acc_activate_email.html', {
                 'user': user,
                 'domain': current_site.domain,
                 'uid':urlsafe_base64_encode(force_bytes(user.pk)),
