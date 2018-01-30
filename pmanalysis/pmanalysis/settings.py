@@ -122,6 +122,6 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'youremail@gmail.com'
-EMAIL_HOST_PASSWORD = 'yourpassword'
+EMAIL_HOST_USER = 'PMAnalysisproject@gmail.com'
+EMAIL_HOST_PASSWORD = 'PMAnalysis012018'
 EMAIL_PORT = 587
