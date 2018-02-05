@@ -41,6 +41,60 @@ from django.core.mail import EmailMessage
 def landing(request):
     return render(request, 'landing.html')
 
+def analysis(request):
+    userDataDummy = [
+        {
+            'name': "Data Set 1",
+            'desc': "Mildly useful",
+            'size': "55kb"
+
+        },
+        {
+            'name': "Supah Secret",
+            'desc': "wouldn't u like to know",
+            'size': "766kb"
+        },
+        {
+            'name': "Lab Results",
+            'desc': "data results from lab 3",
+            'size': "91kb"
+        },
+        {
+            'name': "Medical data",
+            'desc': "You might have cancer",
+            'size': "1kb"
+        }
+    ]
+
+
+    communityDataDummy = [
+        {
+            'name': "Data Set 1",
+            'desc': "Mildly useful",
+            'size': "55kb"
+
+        },
+        {
+            'name': "Supah Secret",
+            'desc': "wouldn't u like to know",
+            'size': "766kb"
+        },
+        {
+            'name': "Lab Results",
+            'desc': "data results from lab 3",
+            'size': "91kb"
+        },
+        {
+            'name': "Medical data",
+            'desc': "You might have cancer",
+            'size': "1kb"
+        }
+    ]
+    return render(request, 'analysis.html', {
+        'userData': userDataDummy,
+        'communityData': communityDataDummy
+    })
+
 def signin(request, template_name='signin.html',
           redirect_field_name=REDIRECT_FIELD_NAME,
           authentication_form=AuthenticationForm,
