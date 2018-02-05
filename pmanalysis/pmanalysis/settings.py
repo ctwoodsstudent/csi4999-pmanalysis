@@ -82,7 +82,7 @@ DATABASES = {
 }
 
 #Redirection after login, this can be changed later
-LOGIN_REDIRECT_URL = 'landing'
+LOGIN_REDIRECT_URL = 'analysis'
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
