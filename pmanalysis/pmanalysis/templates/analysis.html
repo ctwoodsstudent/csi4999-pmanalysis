@@ -4,6 +4,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="{% static "css/analysis.css" %}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <script type="text/javascript" src="{% static "js/analysisList.js" %}"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Ubuntu+Condensed" rel="stylesheet">
@@ -48,9 +49,23 @@
                   <ul class="list">
                       {% for k in userData %}
                         <li>
-                          <p class="name">{{ k.name }}</p>
-                          <p class="description">{{ k.desc }}</p>
-                          <p class="size">{{ k.size }}</p>
+                            <div class="listItemContainer">
+                                <div class="listItemLeft">
+                                    <div>
+                                        <p class="name">{{ k.name }}</p>
+                                    </div>
+                                    <div>
+                                        <p class="description">{{ k.desc }}</p>
+                                    </div>
+                                    <div>
+                                        <p class="size">{{ k.size }}</p>
+                                    </div>
+                                </div>
+                                <div class="listItemRight">
+                                    <i class="fa fa-minus fa-3x deleteIcon" aria-hidden="true"></i>
+                                </div>
+
+                            </div>
                         </li>
                       {% endfor %}
                   </ul>
@@ -65,7 +80,7 @@
             </div>
 
             <div class="sectionContent">
-                <div id="communityData">
+             <div id="communityData">
                   <input class="search" placeholder="Search" />
                   <button class="sort" data-sort="name">
                     Sort by name
@@ -101,3 +116,10 @@
 
 </body>
 </html>
+
+
+
+
+
+
+

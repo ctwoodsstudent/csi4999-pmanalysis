@@ -50,3 +50,26 @@
 .sectionContainer{
 
 }
+
+
+.listItemContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.listItemLeft{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.listItemRight{
+
+}
+
+.deleteIcon{
+    color: Red;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+}
