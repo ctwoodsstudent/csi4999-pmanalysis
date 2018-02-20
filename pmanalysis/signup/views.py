@@ -41,7 +41,9 @@ from django.core.mail import EmailMessage
 def landing(request):
     return render(request, 'landing.html')
 
+@login_required
 def analysis(request):
+
     userDataDummy = [
         {
             'name': "Data Set 1",
@@ -90,10 +92,51 @@ def analysis(request):
             'size': "1kb"
         }
     ]
+
+
+
     return render(request, 'analysis.html', {
         'userData': userDataDummy,
         'communityData': communityDataDummy
     })
+
+def logout(request, next_page=None,
+           template_name='logged_out.html',
+           redirect_field_name=REDIRECT_FIELD_NAME,
+           current_app=None, extra_context=None):
+    """
+    Logs out the user and displays 'You are logged out' message.
+    """
+    auth_logout(request)
+
+    if next_page is not None:
+        next_page = resolve_url(next_page)
+
+    if (redirect_field_name in request.POST or
+            redirect_field_name in request.GET):
+        next_page = request.POST.get(redirect_field_name,
+                                     request.GET.get(redirect_field_name))
+        # Security check -- don't allow redirection to a different host.
+        if not is_safe_url(url=next_page, host=request.get_host()):
+            next_page = request.path
+
+    if next_page:
+        # Redirect to this page until the session has been cleared.
+        return HttpResponseRedirect(next_page)
+
+    current_site = get_current_site(request)
+    context = {
+        'site': current_site,
+        'site_name': current_site.name,
+        'title': _('Logged out')
+    }
+    if extra_context is not None:
+        context.update(extra_context)
+
+    if current_app is not None:
+        request.current_app = current_app
+
+    return TemplateResponse(request, template_name, context)
 
 def signin(request, template_name='signin.html',
           redirect_field_name=REDIRECT_FIELD_NAME,

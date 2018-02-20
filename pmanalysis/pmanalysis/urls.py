@@ -26,5 +26,7 @@ urlpatterns = [
         views.activate, name='activate'),
     url(r'^landing/$', views.landing, name='landing'),
     url(r'^signin/$', views.signin, name='signin'),
+    url(r'^logged_out/$', views.logout, name='logged_out'),
     url(r'^analysis/$', views.analysis, name='analysis')
+
 ]

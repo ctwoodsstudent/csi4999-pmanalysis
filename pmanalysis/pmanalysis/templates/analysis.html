@@ -6,11 +6,12 @@
     <link rel="stylesheet" type="text/css" href="{% static "css/analysis.css" %}">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <script type="text/javascript" src="{% static "js/analysisList.js" %}"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Ubuntu+Condensed" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Analysis</title>
 </head>
+
 <body class="bodyContainer" onload="initPage()">
 
     <div class="navBarContainer">
@@ -24,9 +25,12 @@
 
         </div>
 
-        <div>
+        <div class="usersName">
+            {% if user.is_authenticated %}
+                User: {{ user.get_username }}
+            {% endif %}
             <a class="buttonNav" href="{% url 'landing' %}">My Account</a>
-            <a class="buttonNav" href="{% url 'landing' %}">Logout</a>
+            <a class="buttonNav" href="{% url 'logged_out' %}">Logout</a>
         </div>
     </div>
 
@@ -89,25 +93,24 @@
                   <ul class="list">
                       {% for k in communityData %}
                         <li>
-                          <p class="name">{{ k.name }}</p>
-                          <p class="description">{{ k.desc }}</p>
-                          <p class="size">{{ k.size }}</p>
+                            <div class="listItemContainer">
+                                <div class="listItemLeftCom">
+                                    <div>
+                                        <p class="name">{{ k.name }}</p>
+                                    </div>
+                                    <div>
+                                        <p class="description">{{ k.desc }}</p>
+                                    </div>
+                                    <div>
+                                        <p class="size">{{ k.size }}</p>
+                                    </div>
+                                </div>
+
+                            </div>
                         </li>
                       {% endfor %}
                   </ul>
                 </div>
-            </div>
-
-        </div>
-
-        <div class="sectionContainer">
-
-            <div class="containerTitleDiv">
-                <p>Search Results</p>
-            </div>
-
-            <div class="sectionContent">
-
             </div>
 
         </div>
