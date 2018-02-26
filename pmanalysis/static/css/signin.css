@@ -14,4 +14,23 @@
 .content1{
     font-family: 'Archivo Black', sans-serif;
     font-size: 25px;
+    text-align: center;
+}
+
+.signinPageElement2{
+    text-align: center;
+}
+
+.error{
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.signinFields{
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.signinButton{
+    padding: 5px;
+    margin: 5px;
+    font-family: 'Ubuntu Condensed', sans-serif;
 }

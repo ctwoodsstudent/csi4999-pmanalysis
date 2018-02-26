@@ -47,11 +47,6 @@
     flex-direction: column;
 }
 
-.sectionContainer{
-
-}
-
-
 .listItemContainer{
     display: flex;
     justify-content: space-between;
@@ -63,13 +58,67 @@
     width: 100%;
 }
 
-.listItemRight{
-
+.listItemLeftCom{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 50px;
 }
 
 .deleteIcon{
     color: Red;
     padding-left: 20px;
-    padding-right: 20px;
     cursor: pointer;
+}
+
+#userData{
+    text-align: center;
+    margin-right: 150px;
+    margin-left: 150px;
+}
+
+#communityData{
+    text-align: center;
+    margin-right: 150px;
+    margin-left: 150px;
+}
+
+.listCom{
+    padding-right: 50px;
+    list-style: none;
+}
+
+.list{
+    list-style: none;
+    overflow: auto;
+    max-height: 600px;
+}
+
+.sectionContainer{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-family: 'Archivo Black', sans-serif;
+}
+
+.sectionContent{
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.search{
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.sort{
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.usersName{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    color: white;
+    font-size: 17px;
+}
+
+.uploadWrapper{
+    text-align: center;
+    font-family: 'Ubuntu Condensed', sans-serif;
 }

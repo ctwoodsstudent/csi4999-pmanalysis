@@ -3,3 +3,4 @@
 .idea
 pmanalysis/.DS_Store
 venv
+pmanalysis/userFiles/*

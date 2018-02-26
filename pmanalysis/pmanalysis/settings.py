@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'signup',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -83,6 +84,10 @@ DATABASES = {
 
 #Redirection after login, this can be changed later
 LOGIN_REDIRECT_URL = 'analysis'
+LOGIN_URL = 'signin'
+
+USERFILES = '/userFiles/'
+USERFILES_ROOT = os.path.join(BASE_DIR, 'userFiles')
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
