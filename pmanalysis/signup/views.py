@@ -36,6 +36,9 @@ from django.template.loader import render_to_string
 from .tokens import account_activation_token
 from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
+from django.core.files.storage import FileSystemStorage
+from pmanalysis import settings
+from .models import UserFiles
 
 
 def landing(request):
@@ -43,62 +46,100 @@ def landing(request):
 
 @login_required
 def analysis(request):
+    def convertSize(size):
+        tSize = size / 1000
+        if tSize > 1:
+            t2Size = tSize / 1000
+            if t2Size > 1:
+                t3Size = t2Size / 1000
+                if t3Size > 1:
+                    return "{0:.2f}".format(t2Size) + "MB"
+            else:
+                return "{0:.2f}".format(tSize) + "KB"
+        else:
+            return "{0:.2f}".format(size) + "Bytes"
 
-    userDataDummy = [
-        {
-            'name': "Data Set 1",
-            'desc': "Mildly useful",
-            'size': "55kb"
+    def getUserItems():
+        query = UserFiles.objects.all().filter(UserID=request.user)
+        result = []
+        for k in query:
+            result.append({
+                'name': k.Name,
+                'size': k.Size,
+                'desc': k.Descr
+            })
+        return result
 
-        },
-        {
-            'name': "Supah Secret",
-            'desc': "wouldn't u like to know",
-            'size': "766kb"
-        },
-        {
-            'name': "Lab Results",
-            'desc': "data results from lab 3",
-            'size': "91kb"
-        },
-        {
-            'name': "Medical data",
-            'desc': "You might have cancer",
-            'size': "1kb"
-        }
-    ]
+    def getCommunityItems():
+        communityDataDummy = [
+            {
+                'name': "Data Set 1",
+                'desc': "Mildly useful",
+                'size': "55kb"
 
-
-    communityDataDummy = [
-        {
-            'name': "Data Set 1",
-            'desc': "Mildly useful",
-            'size': "55kb"
-
-        },
-        {
-            'name': "Supah Secret",
-            'desc': "wouldn't u like to know",
-            'size': "766kb"
-        },
-        {
-            'name': "Lab Results",
-            'desc': "data results from lab 3",
-            'size': "91kb"
-        },
-        {
-            'name': "Medical data",
-            'desc': "You might have cancer",
-            'size': "1kb"
-        }
-    ]
+            },
+            {
+                'name': "Supah Secret",
+                'desc': "wouldn't u like to know",
+                'size': "766kb"
+            },
+            {
+                'name': "Lab Results",
+                'desc': "data results from lab 3",
+                'size': "91kb"
+            },
+            {
+                'name': "Medical data",
+                'desc': "You might have cancer",
+                'size': "1kb"
+            }
+        ]
+        return communityDataDummy
 
 
+    if request.method == 'POST' and request.FILES['userFile']:
+        myfile = request.FILES['userFile']
+        fs = FileSystemStorage()
+        filename = fs.save(settings.USERFILES_ROOT + "/" + str(request.user.id) + "/" + myfile.name, myfile)
+        dbObj = UserFiles(UserID=request.user, Name=myfile.name, Size=convertSize(myfile._size), Descr="placeholder")
+        dbObj.save()
 
-    return render(request, 'analysis.html', {
-        'userData': userDataDummy,
-        'communityData': communityDataDummy
-    })
+
+        userDataDummy = getUserItems()
+        communityDataDummy = getCommunityItems()
+
+        return render(request, 'analysis.html', {
+            'userData': userDataDummy,
+            'communityData': communityDataDummy
+        })
+
+
+    else:
+
+        userDataDummy = getUserItems()
+
+
+        communityDataDummy = getCommunityItems()
+
+
+
+        return render(request, 'analysis.html', {
+            'userData': userDataDummy,
+            'communityData': communityDataDummy
+        })
+
+
+
+def dataUpload(request):
+    if request.method == 'POST' and request.FILES['userFile']:
+        myfile = request.FILES['userFile']
+        fs = FileSystemStorage()
+        filename = fs.save(myfile.name, myfile)
+        uploaded_file_url = fs.url(filename)
+        return render(request, 'core/simple_upload.html', {
+            'uploaded_file_url': uploaded_file_url
+        })
+    return render(request, 'core/simple_upload.html')
 
 def logout(request, next_page=None,
            template_name='logged_out.html',

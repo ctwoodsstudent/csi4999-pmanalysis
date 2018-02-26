@@ -75,6 +75,16 @@
                   </ul>
                 </div>
             </div>
+
+            <form method="post" enctype="multipart/form-data" >
+                {% csrf_token %}
+                <input type="file" name="userFile">
+                <button type="submit">Upload</button>
+              </form>
+
+
+
+
         </div>
 
         <div class="sectionContainer">
