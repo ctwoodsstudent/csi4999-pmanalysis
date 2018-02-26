@@ -117,3 +117,8 @@
     color: white;
     font-size: 17px;
 }
+
+.uploadWrapper{
+    text-align: center;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}

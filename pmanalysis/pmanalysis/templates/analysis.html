@@ -75,12 +75,15 @@
                   </ul>
                 </div>
             </div>
-
-            <form method="post" enctype="multipart/form-data" >
-                {% csrf_token %}
-                <input type="file" name="userFile">
-                <button type="submit">Upload</button>
-              </form>
+            <div class = "uploadWrapper">
+                <form method="post" enctype="multipart/form-data" >
+                    {% csrf_token %}
+                    <input type="file" name="userFile">
+                    <button type="submit">Upload</button>
+                    <br>
+                    <input placeholder="Description" type="text" maxlength="30" name="userFileDescr">
+                </form>
+            </div>
 
 
 

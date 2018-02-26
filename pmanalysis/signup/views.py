@@ -101,7 +101,10 @@ def analysis(request):
         myfile = request.FILES['userFile']
         fs = FileSystemStorage()
         filename = fs.save(settings.USERFILES_ROOT + "/" + str(request.user.id) + "/" + myfile.name, myfile)
-        dbObj = UserFiles(UserID=request.user, Name=myfile.name, Size=convertSize(myfile._size), Descr="placeholder")
+        fileDescr = request.POST["userFileDescr"]
+        if (fileDescr == ""):
+            fileDescr = "No Description"
+        dbObj = UserFiles(UserID=request.user, Name=myfile.name, Size=convertSize(myfile._size), Descr=fileDescr)
         dbObj.save()
 
 
