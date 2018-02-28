@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static "css/geo.css" %}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Ubuntu+Condensed" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>GEO</title>
+</head>
+<body class="bodyContainer">
+
+    <div class="navBarContainer">
+
+        <div>
+            <a class="buttonNav" href="{% url 'landing' %}">Home</a>
+            <a class="buttonNav" href="{% url 'analysis' %}">Analysis</a>
+            <a class="buttonNav" href="{% url 'geo' %}" id="active" >GEO</a>
+            <a class="buttonNav" href="{% url 'search' %}">Search</a>
+        </div>
+
+        <div>
+
+        </div>
+
+        <div class="usersName">
+            {% if user.is_authenticated %}
+                User: {{ user.get_username }}
+            {% endif %}
+            <a class="buttonNav" href="{% url 'landing' %}">My Account</a>
+            <a class="buttonNav" href="{% url 'logged_out' %}">Logout</a>
+        </div>
+    </div>
+
+</body>
+</html>

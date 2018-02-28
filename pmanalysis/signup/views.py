@@ -44,6 +44,12 @@ from .models import UserFiles
 def landing(request):
     return render(request, 'landing.html')
 
+def geo(request):
+    return render(request, 'geo.html')
+
+def search(request):
+    return render(request, 'search.html')
+
 @login_required
 def analysis(request):
     def convertSize(size):
