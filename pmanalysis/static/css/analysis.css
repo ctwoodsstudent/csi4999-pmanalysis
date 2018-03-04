@@ -122,3 +122,11 @@
     text-align: center;
     font-family: 'Ubuntu Condensed', sans-serif;
 }
+
+.deletePlaceholder {
+    visibility: hidden;
+}
+
+.headerList{
+    font-weight: bold;
+}

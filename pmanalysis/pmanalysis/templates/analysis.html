@@ -52,7 +52,32 @@
                     Sort by name
                   </button>
 
+                <ul class="list">
+
+                    <div class="headerList">
+                        <div class="listItemContainer">
+                            <div class="listItemLeft">
+                                <div>
+                                    <p>Name</p>
+                                </div>
+                                <div>
+                                    <p>Organism</p>
+                                </div>
+                                <div>
+                                    <p>Description</p>
+                                </div>
+                            </div>
+                            <div class="listItemRight deletePlaceholder">
+                                <i class="fa fa-minus fa-3x deleteIcon" aria-hidden="true"></i>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </ul>
+
                   <ul class="list">
+
                       {% for k in userData %}
                         <li>
                             <div class="listItemContainer">
@@ -61,10 +86,10 @@
                                         <p class="name">{{ k.name }}</p>
                                     </div>
                                     <div>
-                                        <p class="description">{{ k.desc }}</p>
+                                        <p class="organism">{{ k.org }}</p>
                                     </div>
                                     <div>
-                                        <p class="size">{{ k.size }}</p>
+                                        <p class="description">{{ k.desc }}</p>
                                     </div>
                                 </div>
                                 <div class="listItemRight">
@@ -77,13 +102,28 @@
                   </ul>
                 </div>
             </div>
+
+
             <div class = "uploadWrapper">
                 <form method="post" enctype="multipart/form-data" >
                     {% csrf_token %}
-                    <input type="file" name="userFile">
+
+
+                    <input type="file" name="userFile" directory webkitdirectory multiple required>
+
                     <button type="submit">Upload</button>
+
                     <br>
-                    <input placeholder="Description" type="text" maxlength="30" name="userFileDescr">
+
+                    <br>
+
+                    <input placeholder="Name" type="text" maxlength="20" name="userFileName" required>
+
+                    <input placeholder="Organism" type="text" maxlength="50" name="userFileOrg" required>
+
+                    <input placeholder="Description" type="text" maxlength="30" name="userFileDescr" required>
+
+
                 </form>
             </div>
 
@@ -92,43 +132,6 @@
 
         </div>
 
-        <div class="sectionContainer">
-
-            <div class="containerTitleDiv">
-                <p>Community Data</p>
-            </div>
-
-            <div class="sectionContent">
-             <div id="communityData">
-                  <input class="search" placeholder="Search" />
-                  <button class="sort" data-sort="name">
-                    Sort by name
-                  </button>
-
-                  <ul class="list">
-                      {% for k in communityData %}
-                        <li>
-                            <div class="listItemContainer">
-                                <div class="listItemLeftCom">
-                                    <div>
-                                        <p class="name">{{ k.name }}</p>
-                                    </div>
-                                    <div>
-                                        <p class="description">{{ k.desc }}</p>
-                                    </div>
-                                    <div>
-                                        <p class="size">{{ k.size }}</p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </li>
-                      {% endfor %}
-                  </ul>
-                </div>
-            </div>
-
-        </div>
 
     </div>
 
