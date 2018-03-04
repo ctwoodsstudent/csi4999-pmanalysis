@@ -39,6 +39,9 @@ from django.core.mail import EmailMessage
 from django.core.files.storage import FileSystemStorage
 from pmanalysis import settings
 from .models import UserFiles
+from django.core.files.base import ContentFile
+from django.core.files.storage import default_storage
+import os
 
 
 def landing(request):
@@ -71,70 +74,45 @@ def analysis(request):
         for k in query:
             result.append({
                 'name': k.Name,
-                'size': k.Size,
-                'desc': k.Descr
+                'desc': k.Descr,
+                'org': k.Org
             })
         return result
 
-    def getCommunityItems():
-        communityDataDummy = [
-            {
-                'name': "Data Set 1",
-                'desc': "Mildly useful",
-                'size': "55kb"
-
-            },
-            {
-                'name': "Supah Secret",
-                'desc': "wouldn't u like to know",
-                'size': "766kb"
-            },
-            {
-                'name': "Lab Results",
-                'desc': "data results from lab 3",
-                'size': "91kb"
-            },
-            {
-                'name': "Medical data",
-                'desc': "You might have cancer",
-                'size': "1kb"
-            }
-        ]
-        return communityDataDummy
 
 
     if request.method == 'POST' and request.FILES['userFile']:
-        myfile = request.FILES['userFile']
-        fs = FileSystemStorage()
-        filename = fs.save(settings.USERFILES_ROOT + "/" + str(request.user.id) + "/" + myfile.name, myfile)
+        folderCreated = False
+        for k in request.FILES.getlist('userFile'):
+            if not(folderCreated):
+                os.makedirs(settings.USERFILES_ROOT + "/" + str(request.user.id) + "/" + request.POST["userFileName"])
+                folderCreated = True
+            fs = FileSystemStorage()
+            fs.save(settings.USERFILES_ROOT + "/" + str(request.user.id) + "/" + request.POST["userFileName"] + "/" + k.name, k)
+
+
         fileDescr = request.POST["userFileDescr"]
         if (fileDescr == ""):
             fileDescr = "No Description"
-        dbObj = UserFiles(UserID=request.user, Name=myfile.name, Size=convertSize(myfile._size), Descr=fileDescr)
+        fileName = request.POST["userFileName"]
+        fileOrg = request.POST["userFileOrg"]
+        dbObj = UserFiles(UserID=request.user, Name=fileName, Org=fileOrg, Descr=fileDescr)
         dbObj.save()
 
 
-        userDataDummy = getUserItems()
-        communityDataDummy = getCommunityItems()
+        userData = getUserItems()
 
         return render(request, 'analysis.html', {
-            'userData': userDataDummy,
-            'communityData': communityDataDummy
+            'userData': userData
         })
 
 
     else:
 
-        userDataDummy = getUserItems()
-
-
-        communityDataDummy = getCommunityItems()
-
-
+        userData = getUserItems()
 
         return render(request, 'analysis.html', {
-            'userData': userDataDummy,
-            'communityData': communityDataDummy
+            'userData': userData
         })
 
 
