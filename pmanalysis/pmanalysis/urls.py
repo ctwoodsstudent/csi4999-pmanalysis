@@ -21,7 +21,7 @@ from signup import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #url(r'^$', views.home, name='home'),
+    url(r'^$', views.landing, name='landing'),
     url(r'^signup/$', views.signup, name='signup'),
     url(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
         views.activate, name='activate'),
@@ -30,7 +30,8 @@ urlpatterns = [
     url(r'^search/$', views.search, name='search'),
     url(r'^signin/$', views.signin, name='signin'),
     url(r'^logged_out/$', views.logout, name='logged_out'),
-    url(r'^analysis/$', views.analysis, name='analysis')
+    url(r'^analysis/$', views.analysis, name='analysis'),
+    url(r'^analysis/selectItem/$', views.selectItem, name='selectItem')
 
 
 ]

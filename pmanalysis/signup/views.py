@@ -42,7 +42,7 @@ from .models import UserFiles
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 import os
-
+import json
 
 def landing(request):
     return render(request, 'landing.html')
@@ -52,6 +52,18 @@ def geo(request):
 
 def search(request):
     return render(request, 'search.html')
+
+def selectItem(request):
+    reqBody = json.loads(request.body.decode(encoding='UTF-8'))
+    fileName = reqBody["fileName"]
+    query = UserFiles.objects.all().filter(Name=fileName)
+    result = None
+    for k in query:
+        result = k
+    #result is the row in the DB that pertains to the selected file
+
+
+
 
 @login_required
 def analysis(request):

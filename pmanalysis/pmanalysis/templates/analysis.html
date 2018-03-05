@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <script type="text/javascript" src="{% static "js/analysisList.js" %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Ubuntu+Condensed" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Analysis</title>
@@ -44,6 +45,9 @@
                 <p>My Data</p>
             </div>
 
+
+
+
             <div class="sectionContent">
 
                 <div id="userData">
@@ -52,32 +56,31 @@
                     Sort by name
                   </button>
 
-                <ul class="list">
+            <ul class="list2" >
 
-                    <div class="headerList">
-                        <div class="listItemContainer">
-                            <div class="listItemLeft">
-                                <div>
-                                    <p>Name</p>
-                                </div>
-                                <div>
-                                    <p>Organism</p>
-                                </div>
-                                <div>
-                                    <p>Description</p>
-                                </div>
+                <div class="headerList">
+                    <div class="listItemContainer">
+                        <div class="listItemLeftHeader">
+                            <div>
+                                <p>Name</p>
                             </div>
-                            <div class="listItemRight deletePlaceholder">
-                                <i class="fa fa-minus fa-3x deleteIcon" aria-hidden="true"></i>
+                            <div>
+                                <p>Organism</p>
                             </div>
-
+                            <div>
+                                <p>Description</p>
+                            </div>
                         </div>
+                        <div class="listItemRight deletePlaceholder">
+                            <i class="fa fa-minus fa-3x deleteIcon" aria-hidden="true"></i>
+                        </div>
+
                     </div>
+                </div>
 
-                </ul>
+            </ul>
 
-                  <ul class="list">
-
+                  <ul class="list" id="listSelect">
                       {% for k in userData %}
                         <li>
                             <div class="listItemContainer">

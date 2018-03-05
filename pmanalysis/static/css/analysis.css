@@ -56,7 +56,22 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
 }
+.listItemLeftHeader{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.listItemLeft:hover{
+    background-color: #e9e9ff;
+}
+
 
 .listItemLeftCom{
     display: flex;
@@ -89,6 +104,12 @@
 }
 
 .list{
+    list-style: none;
+    overflow: auto;
+    max-height: 600px;
+}
+
+.list2{
     list-style: none;
     overflow: auto;
     max-height: 600px;
