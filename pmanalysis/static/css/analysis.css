@@ -151,3 +151,68 @@
 .headerList{
     font-weight: bold;
 }
+
+/*CSS for the popup div*/
+
+.uiBody{
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    height: 350px;
+    z-index: 999;
+    background-color: #e8e4e4;
+    border: 1px solid;
+    position: fixed;
+    left: calc(50% - 400px);
+    top: calc(50% - 300px);
+}
+
+.headerClass{
+    display: flex;
+    margin: 20px;
+    font-size: 25px;
+    justify-content: center;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.radioClass{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.bothButtons{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.runClass{
+    display: flex;
+    background-color: #87cefa;
+    font-size: 20px;
+    margin: 10px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.cancelClass{
+    display: flex;
+    font-size: 20px;
+    margin: 10px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+
+}
+
+.pClass{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+
+}
+
+.myText{
+    margin-left: 10px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
