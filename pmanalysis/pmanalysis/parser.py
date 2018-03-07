@@ -1,32 +1,28 @@
 import csv
 
-def parser(Pfile, separator):
+def parser(filename, separator):
     for line in csv.reader(open(Pfile), delimiter=separator, skipinitialspace=True):
         if line:
             yield line
 
 
 
-def listerTab(Pfile):
-    for data in parser(Pfile, '    '):
-        lst1 = []
-        lst2 = []
-        counter = 0
-        if counter % 2 == 0:
-            lst1.append(data)
-        if counter % 2 == 1:
-            lst2.append(data)
-        counter += 1
-    return lst1, lst2
+def listerTab(filename):
+    sample = []
+    with open(filename) as f:
+	for line in f:
+		try:
+			probeid, intensity = line.split("\t")
+			sample.append( (str(probeid), float(intensity.strip('\n'))) )
+		except ValueError: pass
+    return sample
 
-def listerComma(Pfile):
-    for data in parser(Pfile, ','):
-        lst1 = []
-        lst2 = []
-        counter = 0
-        if counter % 2 == 0:
-            lst1.append(data)
-        if counter % 2 == 1:
-            lst2.append(data)
-        counter += 1
-        return lst1, lst2
+def listerComma(filename):
+    sample = []
+    with open(filename) as f:
+	for line in f:
+		try:
+			probeid, intensity = line.strip.split(",")
+			sample.append( (str(probeid), float(intensity.strip('\n'))) )
+		except ValueError: pass
+    return sample
