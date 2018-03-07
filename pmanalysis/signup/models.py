@@ -6,3 +6,14 @@ class UserFiles(models.Model):
     Name = models.CharField(max_length=100)
     Descr = models.CharField(max_length=150)
     Org = models.CharField(max_length=150)
+
+class Study(models.Model):
+    Dataset = models.CharField(max_length=100)
+    Title = models.CharField(max_length=500)
+    Organism = models.CharField(max_length=100)
+    Platform = models.CharField(max_length=100)
+    Series = models.CharField(max_length=100)
+    NumSamples = models.IntegerField()
+    Contributors = models.CharField(max_length=100)
+    PubDate = models.DateField()
+    Link = models.CharField(max_length=500)
