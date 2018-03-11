@@ -45,6 +45,7 @@ import os
 import json
 import requests
 
+
 def landing(request):
     return render(request, 'landing.html')
 
@@ -54,10 +55,25 @@ def geo(request):
 def search(request):
     return render(request, 'search.html')
 
-#def selectItem(request):
-    #reqBody = json.loads(request.body.decode(encoding='UTF-8'))
-    #fileName = reqBody["fileName"]
-    #query = UserFiles.objects.all().filter(Name=fileName)
+def formatResponse(data):
+    return (bytes(json.dumps(data), "utf-8"))
+
+#Returns a list of all the files in the folder shown in the header as "fileName"
+#The full path is derived from the incoming data
+def itemsInFolder(request):
+    fileName = request.META["HTTP_FILENAME"]
+
+    query = UserFiles.objects.all().filter(Name=fileName, UserID=request.user)
+    pathToFolder = settings.USERFILES_ROOT + "/" + str(request.user.id) + "/" + str(fileName)
+    files = []
+    for k in os.listdir(pathToFolder):
+        files.append(k)
+    result = {
+        "files": files,
+        "folder": fileName,
+        "success": True
+    }
+    return HttpResponse(formatResponse(result), content_type="application/json")
     #result = None
     #for k in query:
         #result = k

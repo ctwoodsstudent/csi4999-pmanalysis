@@ -30,8 +30,8 @@ urlpatterns = [
     url(r'^search/$', views.search, name='search'),
     url(r'^signin/$', views.signin, name='signin'),
     url(r'^logged_out/$', views.logout, name='logged_out'),
-    url(r'^analysis/$', views.analysis, name='analysis')
-    #url(r'^analysis/selectItem/$', views.selectItem, name='selectItem')
+    url(r'^analysis/$', views.analysis, name='analysis'),
+    url(r'^analysis/itemsInFolder/$', views.itemsInFolder, name='selectItem')
 
 
 ]
