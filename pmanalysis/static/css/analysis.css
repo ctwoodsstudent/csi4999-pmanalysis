@@ -158,7 +158,7 @@
     display: flex;
     flex-direction: column;
     width: 800px;
-    height: 350px;
+    height: 600px;
     z-index: 999;
     background-color: #e8e4e4;
     border: 1px solid;
@@ -216,3 +216,79 @@
     margin-left: 10px;
     font-family: 'Ubuntu Condensed', sans-serif;
 }
+
+.dragContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.unusedContainer{
+    box-shadow: 0 10px 20px -6px rgba(0,0,0,0.2);
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+    height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.controlContainer{
+    box-shadow: 0 10px 20px -6px rgba(0,0,0,0.2);
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+    height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.expContainer{
+    box-shadow: 0 10px 20px -6px rgba(0,0,0,0.2);
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+    height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.order{
+    padding: 15px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.tItemContainer{
+    display: flex;
+    align-items: baseline;
+}
+
+.moveIconContainer1{
+    margin: 10px;
+}
+
+.moveIconContainer2{
+    margin: 10px;
+}
+
+.moveIconContainer1:hover{
+    margin: 10px;
+    cursor: pointer;
+}
+
+.moveIconContainer2:hover{
+    margin: 10px;
+    cursor: pointer;
+}
+
+.namesContainer{
+    display: flex;
+    justify-content: space-evenly;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+
