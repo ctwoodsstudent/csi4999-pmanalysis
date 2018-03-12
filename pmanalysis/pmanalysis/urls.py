@@ -33,7 +33,8 @@ urlpatterns = [
     url(r'^logged_out/$', views.logout, name='logged_out'),
     url(r'^analysis/$', views.analysis, name='analysis'),
     url(r'^analysis/itemsInFolder/$', views.itemsInFolder, name='selectItem'),
-    url(r'^analysis/runTest/$', views.runTest, name='runTest')
+    url(r'^analysis/runTest/$', views.runTest, name='runTest'),
+    url(r'^analysis/deleteFolder/$', views.deleteFolder, name='runTest')
 
 
 
