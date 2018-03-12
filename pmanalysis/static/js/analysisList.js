@@ -1,3 +1,10 @@
+function deleteItem(){
+	var listDelete = document.getElementById("deleteIcon");
+    listDelete.addEventListener("click", function(e){
+
+	});
+};
+
 function moveToControl(item) {
 	var elem = document.getElementById(item).parentElement.parentElement;
 	elem.remove();
@@ -274,9 +281,33 @@ function generateOverlay(fileName, folderName) {
 	})
 };
 
-
-
 function initPage() {
+	$(".deleteIcon").on("click", function(e) {
+		e.stopPropagation();
+		var csrftoken  = document.cookie.split("=");
+        csrftoken = csrftoken[csrftoken.indexOf("csrftoken") + 1];
+		var folderName = e.target.parentElement.parentElement.children[0].children[0].innerText.split(" ").join("").split("\n").join("");
+		$.ajax({
+			url: window.location.href + "deleteFolder/",
+			type: "POST",
+			contentType: "application/json",
+			dataType: "json",
+            headers: {
+			    "X-CSRFToken" : csrftoken
+            },
+            data: JSON.stringify({
+				folderName: folderName
+			})
+
+            }).done(function(response){
+            	if (response.success){
+            	   window.location.href = window.location.href;
+                }
+                else {
+            	    alert("Deletion failed");
+                }
+		});
+	});
 
     //initialize list for user data
     var options = {
@@ -317,7 +348,6 @@ function initPage() {
                     alert("selection didn't work");
                 }
 		});
-
 
 
 

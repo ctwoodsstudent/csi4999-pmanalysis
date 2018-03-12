@@ -43,7 +43,7 @@ from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 import os
 import json
-import requests
+import shutil
 
 
 def landing(request):
@@ -60,6 +60,16 @@ def results(request):
 
 def runTest(request):
     testData = json.loads(request.body)
+
+def deleteFolder(request):
+    folderName = json.loads(request.body)["folderName"]
+    pathToFolder = settings.USERFILES_ROOT + "/" + str(request.user.id) + "/" + folderName
+    shutil.rmtree(pathToFolder)
+    UserFiles.objects.all().filter(UserID=request.user, Name=folderName).delete()
+    result = {
+        "success": True
+    }
+    return HttpResponse(formatResponse(result), content_type="application/json")
 
 
 def formatResponse(data):
