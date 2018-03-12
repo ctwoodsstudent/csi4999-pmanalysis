@@ -28,10 +28,13 @@ urlpatterns = [
     url(r'^landing/$', views.landing, name='landing'),
     url(r'^geo/$', views.geo, name='geo'),
     url(r'^search/$', views.search, name='search'),
+    url(r'^results/$', views.results, name='results'),
     url(r'^signin/$', views.signin, name='signin'),
     url(r'^logged_out/$', views.logout, name='logged_out'),
     url(r'^analysis/$', views.analysis, name='analysis'),
-    url(r'^analysis/itemsInFolder/$', views.itemsInFolder, name='selectItem')
+    url(r'^analysis/itemsInFolder/$', views.itemsInFolder, name='selectItem'),
+    url(r'^analysis/runTest/$', views.runTest, name='runTest')
+
 
 
 ]

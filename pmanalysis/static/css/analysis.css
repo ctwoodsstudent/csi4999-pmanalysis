@@ -209,7 +209,18 @@
     justify-content: center;
     margin: 20px;
     font-family: 'Ubuntu Condensed', sans-serif;
+}
 
+.cClass{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.textContainer{
+    display: flex;
+    justify-content: center;
 }
 
 .myText{

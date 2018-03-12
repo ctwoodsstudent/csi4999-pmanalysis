@@ -1,7 +1,7 @@
 function moveToControl(item) {
 	var elem = document.getElementById(item).parentElement.parentElement;
 	elem.remove();
-	var target = document.getElementsByClassName("controlContainer")[0];
+	var target = document.getElementsByClassName("controlContainer")[0].children[0].children[0];
 	elem.children[0].children[0].className = "fa fa-angle-left";
 	elem.children[1].children[0].className = "";
 	elem.children[0].children[0].addEventListener("click", function(e){
@@ -15,12 +15,30 @@ function moveToControl(item) {
 	});
 	target.append(elem)
 
-};
+}
+
+function getControlFiles(){
+	var target = document.getElementsByClassName("controlContainer")[0].children[0].children[0];
+	var result = [];
+	for (var k = 0; k < target.children.length; k++) {
+		result.push(target.children[k].children[2].innerText);
+	}
+	return result;
+}
+
+function getExperimentalFiles() {
+	var target = document.getElementsByClassName("expContainer")[0].children[0].children[0];
+	var result = [];
+	for (var k = 0; k < target.children.length; k++) {
+		result.push(target.children[k].children[2].innerText);
+	}
+	return result;
+}
 
 function moveToExp(item) {
 	var elem = document.getElementById(item).parentElement.parentElement;
 	elem.remove();
-	var target = document.getElementsByClassName("expContainer")[0];
+	var target = document.getElementsByClassName("expContainer")[0].children[0].children[0];
 	elem.children[0].children[0].className = "fa fa-angle-left";
 	elem.children[1].children[0].className = "";
 	elem.children[0].children[0].addEventListener("click", function(e){
@@ -38,7 +56,7 @@ function moveToExp(item) {
 function moveBackToUnused(item) {
 	var elem = document.getElementById(item).parentElement.parentElement;
 	elem.remove();
-	var target = document.getElementsByClassName("unusedContainer")[0];
+	var target = document.getElementsByClassName("unusedContainer")[0].children[0].children[0];
 	elem.children[0].children[0].className = "fa fa-angle-right";
 	elem.children[1].children[0].className = "fa fa-angle-double-right";
 	target.append(elem);
@@ -169,14 +187,23 @@ function generateOverlay(fileName, folderName) {
 	//innerExperimentalDocs2.appendChild(innerExperimentalDocs3);
 	//end div creation for draggable
 
+	var textContainer = document.createElement("div");
+	textContainer.className = "textContainer";
+	uiContainer.append(textContainer);
+
 	var pValContainer = document.createElement("div");
 	pValContainer.className = "pClass";
 	pValContainer.innerHTML = "Select your P value: " + "<label><input type=\"text\" class=\"myText\" id=\"pVal\" value=\" \"</label>";
-	uiContainer.append(pValContainer);
+	textContainer.append(pValContainer);
+
+	var conIntContainer = document.createElement("div");
+	conIntContainer.className = "cClass";
+	conIntContainer.innerHTML = "Select your confidence interval: " + "<label><input type=\"text\" class=\"myText\" id=\"confInt\" value=\" \"</label>";
+	textContainer.append(conIntContainer);
 
 	var radioControlsContainer = document.createElement("div");
 	radioControlsContainer.className = "radioClass";
-	radioControlsContainer.innerHTML = "<label><input type=\"radio\" name=\"IH-typeSelector\"> Run test 1 (Placeholder name)</label>   <label><input type=\"radio\" name=\"IH-typeSelector\">Run test 2 (Placeholder name)</label>";
+	radioControlsContainer.innerHTML = "<label><input type=\"radio\" id=\"test1\" name=\"IH-typeSelector\">Welch's T test</label>";
 	uiContainer.append(radioControlsContainer);
 
 	//Controls
@@ -186,8 +213,51 @@ function generateOverlay(fileName, folderName) {
 	var acceptControl = document.createElement("input");
 	acceptControl.type = "button";
 	acceptControl.value = "Start Test";
-	acceptControl.id = "IH-accept";
+	acceptControl.id = "accept";
 	acceptControl.className = "runClass";
+	acceptControl.addEventListener("click", function(e){
+		var csrftoken  = document.cookie.split("=");
+        csrftoken = csrftoken[csrftoken.indexOf("csrftoken") + 1];
+        var controlFiles = getControlFiles();
+        var experimentalFiles = getExperimentalFiles();
+        var pVal = document.getElementById("pVal").value;
+        var confInt = document.getElementById("confInt").value;
+		if (controlFiles.length === 0) {
+			alert("No control files were selected.");
+			return;
+		}
+		if (experimentalFiles.length === 0) {
+			alert("No experimental files were selected.");
+			return;
+		}
+		if (pVal.length === 0) {
+			alert("No p-value was entered.");
+			return;
+		}
+		if (confInt.length === 0) {
+			alert("No confidence interval was entered.");
+			return;
+		}
+
+		$.ajax({
+			url: window.location.href + "runTest/",
+			type: "POST",
+			contentType: "application/json",
+			dataType: "json",
+            headers: {
+			    "X-CSRFToken" : csrftoken
+            },
+			data: JSON.stringify({
+				controlFiles: controlFiles,
+				experimentalFiles: experimentalFiles,
+				pValue: pVal,
+				confidenceInterval: confInt,
+				dirName: folderName,
+				test: "test1"
+			})
+
+            });
+	});
 	controlContainer.append(acceptControl);
 
 	var cancelControl = document.createElement("input");
