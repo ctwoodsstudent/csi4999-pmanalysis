@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static "css/search.css" %}">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Ubuntu+Condensed" rel="stylesheet">
@@ -34,5 +34,15 @@
         </div>
     </div>
 
+    <div class="box">
+      <div class="container-1">
+      <span class="icon"><i class="fa fa-search"></i></span>
+      <input type="search" id="search" placeholder="Search GEO..." />
+      </div>
+    </div>
+    <!--<form class="searchBar" method="get" action="/search/">
+      Search GEO : <input type="text" name="q" id="id_q" value="{{ query }}"/>
+      <input type="submit" value="Search" />
+    </form>-->
 </body>
 </html>

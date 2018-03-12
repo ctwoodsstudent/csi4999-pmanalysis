@@ -41,6 +41,8 @@ from pmanalysis import settings
 from .models import UserFiles
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
+from django.template import RequestContext
+from .search import normalize_query, get_query
 import os
 import json
 import requests
@@ -53,6 +55,19 @@ def geo(request):
 
 def search(request):
     return render(request, 'search.html')
+    #query_string = ''
+    #found_entries = None
+    #if ('q' in request.GET) and request.GET['q'].strip():
+    #    query_string = request.GET['q']
+
+    #    entry_query = get_query(query_string, ['title', 'body',])
+
+    #    found_entries = Entry.objects.filter(entry_query).order_by('-pub_date')
+
+    #return render('search.html',
+    #                      { 'query_string': query_string, 'found_entries': found_entries },
+    #                      context=RequestContext(request))
+
 
 #def selectItem(request):
     #reqBody = json.loads(request.body.decode(encoding='UTF-8'))
