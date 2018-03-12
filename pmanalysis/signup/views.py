@@ -55,6 +55,13 @@ def geo(request):
 def search(request):
     return render(request, 'search.html')
 
+def results(request):
+    return render(request, 'results.html')
+
+def runTest(request):
+    testData = json.loads(request.body)
+
+
 def formatResponse(data):
     return (bytes(json.dumps(data), "utf-8"))
 
