@@ -44,6 +44,8 @@ from django.core.files.storage import default_storage
 import os
 import json
 import shutil
+#from pprint import pprint
+from . import parser, statician
 
 
 def landing(request):
@@ -57,9 +59,33 @@ def search(request):
 
 def results(request):
     return render(request, 'results.html')
-
 def runTest(request):
     testData = json.loads(request.body)
+    control_files = testData["controlFiles"]
+    exp_files = testData["experimentalFiles"]
+    pval = testData["pValue"]
+    conf_intv = testData["confidenceInterval"]
+    dir_name = testData["dirName"]
+
+    con_flst = []
+    for filename in control_files:
+        con_file_location = ( "./GEO DataSets/" + str(dir_name) + "/" + str(filename) )
+        con_flst.append(con_file_location)
+
+    exp_flst = []
+    for filename in exp_files:
+        exp_file_location = ( "./GEO DataSets/" + str(dir_name) + "/" + str(filename) )
+        exp_flst.append(exp_file_location)
+
+    con_samples = parser.listerTab(con_flst)
+    exp_samples = parser.listerTab(exp_flst)
+
+    tstats, pvals = statician.runTTest(con_samples, exp_samples)
+
+    sig_probes = statician.getTestResults(pvals, list(con_samples.keys()), float(pval))
+    print(str(len(sig_probes)))
+
+    return HttpResponse('success')
 
 def deleteFolder(request):
     folderName = json.loads(request.body)["folderName"]
