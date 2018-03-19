@@ -46,7 +46,7 @@ import json
 import shutil
 #from pprint import pprint
 from . import parser, statician
-
+import numpy as np
 
 def landing(request):
     return render(request, 'landing.html')
@@ -86,6 +86,10 @@ def runTest(request):
 
     sig_probes = statician.getTestResults(pvals, list(con_samples.keys()), float(pval))
     print(str(len(sig_probes)))
+    for probe in sig_probes:
+        cmean = np.mean(con_samples[probe])
+        xmean = np.mean(exp_samples[probe])
+        print(probe + "\t" + str(cmean) + "\t" + str(xmean) + "\t" + str(np.absolute(cmean-xmean)))
 
     return HttpResponse(formatResponse({"success": True}), content_type="application/json")
 
