@@ -4,16 +4,37 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="{% static "css/landing.css" %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Ubuntu+Condensed" rel="stylesheet">
     <meta charset="UTF-8">
     <title>PM Analysis</title>
 
 </head>
+
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Playfair Display";
+    letter-spacing: 5px;
+}
+
+</style>
+
 <body style="margin: 0;">
-    <div class="navbarContainer">
+  <div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="#home" class="w3-bar-item w3-button">PM Analysis</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="{% url 'signin' %}" class="w3-bar-item w3-button">Login</a>
+      <a href="{% url 'signup' %}" class="w3-bar-item w3-button">Signup</a>
+    </div>
+  </div>
+</div>
+    <!--<div class="navbarContainer">
         <div>
         </div>
-        <div class="navbarControlContainer">
+        <div class="navbarControlContainer" style="letter-spacing:4px;">
             <div class="navBarButtonContainer">
                 <a href="{% url 'signin' %}" class="landingButton">
                     Log in
@@ -27,10 +48,12 @@
         </div>
 
     </div>
+-->
+
 
     <div class="landingBodyControlContainer">
 
-        <div class="landingBodyContainer">
+      <div class="landingBodyContainer">
 
             <div>
 
