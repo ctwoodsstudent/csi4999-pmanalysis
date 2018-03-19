@@ -67,14 +67,16 @@ def runTest(request):
     conf_intv = testData["confidenceInterval"]
     dir_name = testData["dirName"]
 
+    pathToFolder = settings.USERFILES_ROOT + "/" + str(request.user.id) + "/" + str(dir_name)
+
     con_flst = []
     for filename in control_files:
-        con_file_location = ( "./GEO DataSets/" + str(dir_name) + "/" + str(filename) )
+        con_file_location = pathToFolder + "/" + filename
         con_flst.append(con_file_location)
 
     exp_flst = []
     for filename in exp_files:
-        exp_file_location = ( "./GEO DataSets/" + str(dir_name) + "/" + str(filename) )
+        exp_file_location = pathToFolder + "/" + filename
         exp_flst.append(exp_file_location)
 
     con_samples = parser.listerTab(con_flst)
@@ -85,7 +87,7 @@ def runTest(request):
     sig_probes = statician.getTestResults(pvals, list(con_samples.keys()), float(pval))
     print(str(len(sig_probes)))
 
-    return HttpResponse('success')
+    return HttpResponse(formatResponse({"success": True}), content_type="application/json")
 
 def deleteFolder(request):
     folderName = json.loads(request.body)["folderName"]
