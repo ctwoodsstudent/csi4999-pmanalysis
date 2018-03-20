@@ -131,6 +131,21 @@
 
 .sort{
     font-family: 'Ubuntu Condensed', sans-serif;
+    border: solid lightskyblue;
+    background-color: lightskyblue;
+    transition-duration: 0.4s;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+}
+
+.sort:hover{
+    border: solid lightskyblue;
+    background-color: white;
+    border-radius: 4px;
+    color: black;
+    font-weight: bold;
+    font-family: 'Ubuntu Condensed', sans-serif;
 }
 
 .usersName{
@@ -302,4 +317,61 @@
     font-family: 'Ubuntu Condensed', sans-serif;
 }
 
+.uploadButton{
+    border: solid lightskyblue;
+    background-color: lightskyblue;
+    padding: 10px;
+    transition-duration: 0.4s;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+}
 
+.uploadButton:hover{
+    border: solid lightskyblue;
+    padding: 10px;
+    background-color: white;
+    border-radius: 4px;
+    color: black;
+    font-weight: bold;
+}
+
+.fileButton{
+    border: solid lightskyblue;
+    background-color: lightskyblue;
+    padding: 10px;
+    transition-duration: 0.4s;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1;
+    color: white;
+}
+
+.fileButton:hover{
+    border: solid lightskyblue;
+    padding: 10px;
+    background-color: white;
+    border-radius: 4px;
+    position: absolute;
+    color: black;
+    z-index: 1;
+}
+
+.fileHideBrowserButton{
+    visibility: hidden;
+}
+
+.fileInputs{
+    position: relative;
+}
+
+.submitWrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.fileInputDescr{
+    line-height: 50px;
+    padding-right: 150px;
+    padding-left: 10px;
+}

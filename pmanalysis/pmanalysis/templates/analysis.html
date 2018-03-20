@@ -115,9 +115,16 @@
                     {% csrf_token %}
 
 
-                    <input type="file" name="userFile" directory webkitdirectory multiple required>
+                        <input id="fileInput" type="file" class="fileHideBrowserButton" name="userFile" directory webkitdirectory multiple required>
+                        <div class="submitWrapper">
+                            <button type="button" id="fileInputBtn" class="uploadButton">Choose files</button>
+                            <div id="fileInputDescr" class="fileInputDescr">No files selected</div>
+                            <button type="submit" class="uploadButton">Upload</button>
+                        </div>
 
-                    <button type="submit">Upload</button>
+
+
+
 
                     <br>
 

@@ -282,6 +282,17 @@ function generateOverlay(fileName, folderName) {
 };
 
 function initPage() {
+	$("#fileInputBtn").on("click", function(e) {
+		var inputElem = $("#fileInput");
+
+		inputElem.on("change", function(e){
+			var files = inputElem.prop("files");
+			$("#fileInputDescr")[0].innerText = files.length + " files selected.";
+		});
+		inputElem.click();
+	});
+
+
 	$(".deleteIcon").on("click", function(e) {
 		e.stopPropagation();
 		var csrftoken  = document.cookie.split("=");
