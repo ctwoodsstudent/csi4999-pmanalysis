@@ -26,7 +26,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.debug import sensitive_post_parameters
 
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, render_to_response
 from django.contrib.auth import login, authenticate
 from .forms import SignupForm
 from django.contrib.sites.shortcuts import get_current_site
@@ -59,6 +59,7 @@ def search(request):
 
 def results(request):
     return render(request, 'results.html')
+
 def runTest(request):
     testData = json.loads(request.body)
     control_files = testData["controlFiles"]
@@ -85,13 +86,18 @@ def runTest(request):
     tstats, pvals = statician.runTTest(con_samples, exp_samples)
 
     sig_probes = statician.getTestResults(pvals, list(con_samples.keys()), float(pval))
+    conIntensity = []
+    expIntensity = []
     print(str(len(sig_probes)))
     for probe in sig_probes:
         cmean = np.mean(con_samples[probe])
         xmean = np.mean(exp_samples[probe])
+        conIntensity.append(xmean)
+        expIntensity.append(cmean)
         print(probe + "\t" + str(cmean) + "\t" + str(xmean) + "\t" + str(np.absolute(cmean-xmean)))
 
     return HttpResponse(formatResponse({"success": True}), content_type="application/json")
+    #return render_to_response('analysisList.js', {'conIntensity' : conIntensity, 'expIntensity' : expIntensity, 'sigProbes' : sig_probes})
 
 def deleteFolder(request):
     folderName = json.loads(request.body)["folderName"]
