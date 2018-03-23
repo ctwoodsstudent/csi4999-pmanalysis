@@ -42,3 +42,15 @@
     color: white;
     font-size: 17px;
 }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 17px;
+}
+
+li {
+  display: inline;
+  float: left;
+  margin-left: 17px;
+}
