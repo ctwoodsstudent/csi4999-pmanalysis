@@ -45,7 +45,21 @@
         <li><strong>Contributor(s)</strong> {{ Contributors }}</li>
         <li><strong>Publication Date</strong> {{ PubDate }}</li>
       </ul>
+      {{% block content %}
 
+        {% if geostudy_list %}
+        <ul>
+          {% for study in queryset %}
+          <li>
+            {{ study.Dataset }} {{ study.Title }}
+          </li>
+          {% endfor %}
+
+        </ul>
+        {% else %}
+          <p>No found GEO DataSets at this time, check your connection.</p>
+        {% endif %}
+      {% endblock %}}
     </div>
 
 </body>

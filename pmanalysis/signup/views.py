@@ -41,12 +41,25 @@ from pmanalysis import settings
 from .models import UserFiles
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
+from django.views import generic
+from .models import GEOStudy
 import os
 import json
 import shutil
 #from pprint import pprint
 from . import parser, statician
 import numpy as np
+
+class GeoDataView(generic.ListView):
+    model = GEOStudy
+    context_object_name = 'geostudy_list'
+    queryset = list(GEOStudy.objects.all())
+    template_name = 'geo.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(GeoDataView, self).get_context_data(**kwargs)
+        context['data'] = 'ex data'
+        return context
 
 def landing(request):
     return render(request, 'landing.html')
