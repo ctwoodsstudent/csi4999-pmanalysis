@@ -129,11 +129,11 @@ def runTest(request):
     expIntensity = []
     print(str(len(sig_probes)))
     for probe in sig_probes:
-        cmean = np.mean(con_samples[probe])
-        xmean = np.mean(exp_samples[probe])
+        cmean = round(float(np.mean((con_samples[probe]))), 6)
+        xmean = round(float(np.mean((exp_samples[probe]))), 6)
         conIntensity.append(xmean)
         expIntensity.append(cmean)
-        print(probe + "\t" + str(cmean) + "\t" + str(xmean) + "\t" + str(np.absolute(cmean-xmean)))
+        #print(probe + "\t" + str(cmean) + "\t" + str(xmean) + "\t" + str(np.absolute(cmean-xmean)))
 
     #return HttpResponse(formatResponse({"success": True}), content_type="application/json")
     result = {'success': True, 'data': {'conIntensity' : conIntensity, 'expIntensity' : expIntensity, 'sigProbes': sig_probes}}
