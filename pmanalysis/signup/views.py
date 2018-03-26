@@ -50,22 +50,48 @@ import shutil
 from . import parser, statician
 import numpy as np
 
-class GeoDataView(generic.ListView):
-    model = GEOStudy
-    context_object_name = 'geostudy_list'
-    queryset = list(GEOStudy.objects.all())
-    template_name = 'geo.html'
 
-    def get_context_data(self, **kwargs):
-        context = super(GeoDataView, self).get_context_data(**kwargs)
-        context['data'] = 'ex data'
-        return context
 
 def landing(request):
     return render(request, 'landing.html')
 
 def geo(request):
-    return render(request, 'geo.html')
+
+    def getGEOItems():
+        query = GEOStudy.objects.all()
+        result = []
+        for k in query:
+            result.append({
+                'Set': k.Dataset,
+                'Title': k.Title,
+                'Org': k.Organism,
+                'Platform': k.Platform,
+                'Series': k.Series,
+                'Num': k.NumSamples,
+                'Con': k.Contributors,
+                'Pub': k.PubDate,
+                'Link': k.Link
+            })
+        return result
+
+    GEOData = getGEOItems()
+
+    return render(request, 'geo.html', {
+        'GEOData': GEOData
+    })
+
+    #class GeoDataView(generic.ListView):
+        #model = GEOStudy
+        #context_object_name = 'geostudy_list'
+        #queryset = list(GEOStudy.objects.all())
+        #template_name = 'geo.html'
+
+        #def get_context_data(self, **kwargs):
+            #context = super(GeoDataView, self).get_context_data(**kwargs)
+            #context['data'] = 'ex data'
+            #return context
+
+    #return render(request, 'geo.html')
 
 def search(request):
     return render(request, 'search.html')
