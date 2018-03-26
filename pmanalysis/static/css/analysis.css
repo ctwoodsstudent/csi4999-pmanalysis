@@ -381,3 +381,23 @@
     height: 90%;
     margin: 0 auto;
 }
+
+.closeClass{
+    justify-content: space-evenly;
+    width: 55px;
+    font-size: 20px;
+    margin: 10px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.exportClass{
+    justify-content: space-evenly;
+    width: 70px;
+    font-size: 20px;
+    margin: 10px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.myButtonDivYay{
+    display: flex;
+}

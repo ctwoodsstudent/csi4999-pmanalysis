@@ -69,18 +69,18 @@ function moveBackToUnused(item) {
 	target.append(elem);
 };
 
-function generateGraph (uiContainer, data){
+function generateGraph (uiContainer, data, folderName){
     var graphContainer = document.createElement("div");
 	graphContainer.className = "graphContainer";
 	graphContainer.id = "graphContainerID";
 	uiContainer.append(graphContainer);
 
-	Highcharts.chart('graphContainerID', {
+	var chart = Highcharts.chart('graphContainerID', {
 		chart: {
 			type: 'bar'
 		},
 		title: {
-			text: 'Results'
+			text: folderName
 		},
 		subtitle: {
 			text: 'Results'
@@ -121,7 +121,7 @@ function generateGraph (uiContainer, data){
 			align: 'right',
 			verticalAlign: 'top',
 			x: -10,
-			y: 20,
+			y: 10,
 			floating: true,
 			borderWidth: 1,
 			backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
@@ -138,12 +138,27 @@ function generateGraph (uiContainer, data){
 			data: data.expIntensity.slice(200)
 		}]
 	});
+
+	var myButtonDivYay = document.createElement("div");
+	myButtonDivYay.className = "myButtonContainerYay";
+	uiContainer.append(myButtonDivYay);
+
+	var exportCsv = document.createElement("input");
+	exportCsv.type = "button";
+	exportCsv.value = "Export";
+	exportCsv.className = "exportClass";
+	myButtonDivYay.append(exportCsv);
+
+	exportCsv.addEventListener("click", function(e){
+		alert(chart.getCSV());
+	});
+
 	var cancelControl = document.createElement("input");
 	cancelControl.type = "button";
-	cancelControl.value = "Cancel";
+	cancelControl.value = "Close";
 	cancelControl.id = "IH-cancel";
-	cancelControl.className = "cancelClass";
-	uiContainer.append(cancelControl);
+	cancelControl.className = "closeClass";
+	myButtonDivYay.append(cancelControl);
 
 	cancelControl.addEventListener("click", function(e){
 		uiContainer.remove();
@@ -345,7 +360,7 @@ function generateOverlay(fileName, folderName) {
             }).done(function(response){
                 if (response.success) {
                     $(uiContainer).empty();
-                    generateGraph(uiContainer, response.data);
+                    generateGraph(uiContainer, response.data, folderName);
                 }
                 else {
                     alert("Something went wrong");
