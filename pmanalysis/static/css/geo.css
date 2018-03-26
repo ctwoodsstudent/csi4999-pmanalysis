@@ -1,56 +1,422 @@
 .navBarContainer{
-    background-color: #333;
+    /*background-color: #3333332b;*/
     overflow: hidden;
-}
-
-.navBarContainer{
+    /*box-shadow: 2px 2px 18px #434348;*/
     display: flex;
     justify-content: space-between;
     padding: 14px 16px;
+    position: relative;
 }
 
 .buttonNav{
-    color: #f2f2f2;
+    color: #434348;
     text-align: center;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 25px;
     margin: 15px;
-    font-family: 'Ubuntu Condensed', sans-serif;
+    font-family: 'Hind Siliguri', sans-serif;
 }
 
 .buttonNav:hover{
-    background-color: #ddd;
     color: black;
+    font-weight: bold;
+    font-size: 25px;
     padding: 15px;
     margin: 0px;
 }
 
 #active{
-    background-color: lightskyblue;
-    color: white;
+    color: black;
+    font-weight: bold;
     padding: 15px;
     margin: 0px;
+    font-size: 25px;
 
 }
 
 .bodyContainer{
     margin: 0px;
+    height: 100%;
+}
+
+.fullPage{
+    height: 100%;
+}
+
+.containerTitleDiv{
+    margin: 10px;
+    font-size: 35px;
+    text-align: center;
+    color: whitesmoke;
+}
+
+.dataContainer{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.listItemContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.listItemLeft{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.listItemLeftHeader{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.listItemLeft:hover{
+    background:rgba(0,0,0,0.5);
+    border-radius: 4px;
+}
+
+
+.listItemLeftCom{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 50px;
+}
+
+.deleteIcon{
+    color: Red;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+#userData{
+    text-align: center;
+    margin-right: 150px;
+    margin-left: 150px;
+}
+
+#communityData{
+    text-align: center;
+    margin-right: 150px;
+    margin-left: 150px;
+}
+
+.listCom{
+    padding-right: 50px;
+    list-style: none;
+}
+
+.list{
+    list-style: none;
+    overflow: auto;
+    max-height: 400px;
+    color: whitesmoke;
+}
+
+.list2{
+    list-style: none;
+    overflow: auto;
+    max-height: 600px;
+    color: whitesmoke;
+}
+
+.sectionContainer{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: 'Hind Siliguri', sans-serif;
+    width: 70%;
+    padding-top: 25px;
+    padding-bottom: 60px;
+    border-radius: 5px;
+    background:rgba(0,0,0,0.6);
+}
+
+.sectionContent{
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.search{
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.sort{
+    font-family: 'Hind Siliguri', sans-serif;
+    border: solid slategray 1px;
+    background: rgba(0,0,0,0.1);
+    transition-duration: 0.4s;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+}
+
+.sort:hover{
+    border: solid slategray 1px;
+    background-color: slategray;
+    border-radius: 4px;
+    color: whitesmoke;
+    font-weight: bold;
+    font-family: 'Hind Siliguri', sans-serif;
 }
 
 .usersName{
-    font-family: 'Ubuntu Condensed', sans-serif;
+    font-family: 'Hind Siliguri', sans-serif;
+    color: #434348;
+    font-size: 25px;
+}
+
+.uploadWrapper{
+    text-align: center;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.deletePlaceholder {
+    visibility: hidden;
+}
+
+.headerList{
+    font-weight: bold;
+}
+
+/*CSS for the popup div*/
+
+.uiBody{
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    height: 600px;
+    z-index: 999;
+    background-color: #e8e4e4;
+    border: 1px solid;
+    position: fixed;
+    left: calc(50% - 400px);
+    top: calc(50% - 300px);
+}
+
+.headerClass{
+    display: flex;
+    margin: 20px;
+    font-size: 25px;
+    justify-content: center;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.radioClass{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.bothButtons{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.runClass{
+    display: flex;
+    background-color: #87cefa;
+    font-size: 20px;
+    margin: 10px;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.cancelClass{
+    display: flex;
+    font-size: 20px;
+    margin: 10px;
+    font-family: 'Hind Siliguri', sans-serif;
+
+}
+
+.pClass{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.cClass{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.textContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.myText{
+    margin-left: 10px;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.dragContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.unusedContainer{
+    box-shadow: 0 10px 20px -6px rgba(0,0,0,0.2);
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+    height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.controlContainer{
+    box-shadow: 0 10px 20px -6px rgba(0,0,0,0.2);
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+    height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.expContainer{
+    box-shadow: 0 10px 20px -6px rgba(0,0,0,0.2);
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+    height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.order{
+    padding: 15px;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.tItemContainer{
+    display: flex;
+    align-items: baseline;
+}
+
+.moveIconContainer1{
+    margin: 10px;
+}
+
+.moveIconContainer2{
+    margin: 10px;
+}
+
+.moveIconContainer1:hover{
+    margin: 10px;
+    cursor: pointer;
+}
+
+.moveIconContainer2:hover{
+    margin: 10px;
+    cursor: pointer;
+}
+
+.namesContainer{
+    display: flex;
+    justify-content: space-evenly;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.uploadButton{
+    border: solid slategray 1px;
+    background: rgba(0,0,0,0.1);
+    padding: 10px;
+    transition-duration: 0.4s;
+    border-radius: 4px;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.uploadButton:hover{
+    border: solid slategray 1px;
+    padding: 10px;
+    background-color: slategray;
+    border-radius: 4px;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.fileButton{
+    border: solid #3291cd;
+    background-color: #3291cd;
+    padding: 10px;
+    transition-duration: 0.4s;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1;
     color: white;
-    font-size: 17px;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 17px;
+.fileButton:hover{
+    border: solid #3291cd;
+    padding: 10px;
+    background-color: white;
+    border-radius: 4px;
+    position: absolute;
+    color: black;
+    z-index: 1;
 }
 
-li {
-  display: inline;
-  float: left;
-  margin-left: 17px;
+.fileHideBrowserButton{
+    visibility: hidden;
+}
+
+.fileInputs{
+    position: relative;
+}
+
+.submitWrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.fileInputDescr{
+    line-height: 50px;
+    padding-right: 150px;
+    padding-left: 10px;
+    color: whitesmoke;
+}
+
+.graphContainer{
+    width: 100%;
+    height: 90%;
+    margin: 0 auto;
+}
+
+.closeClass{
+    justify-content: space-evenly;
+    width: 55px;
+    font-size: 20px;
+    margin: 10px;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.exportClass{
+    justify-content: space-evenly;
+    width: 70px;
+    font-size: 20px;
+    margin: 10px;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.myButtonDivYay{
+    display: flex;
 }

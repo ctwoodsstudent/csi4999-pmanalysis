@@ -65,32 +65,32 @@
                 <div id="userData">
                   <input class="search" placeholder="Search" />
                   <button class="sort" data-sort="name">
-                    Sort by name
+                    Sort by directory
                   </button>
 
-            <ul class="list2" >
+                <ul class="list2" >
 
-                <div class="headerList">
-                    <div class="listItemContainer">
-                        <div class="listItemLeftHeader">
-                            <div>
-                                <p>Directory Name</p>
+                    <div class="headerList">
+                        <div class="listItemContainer">
+                            <div class="listItemLeftHeader">
+                                <div>
+                                    <p>Directory Name</p>
+                                </div>
+                                <div>
+                                    <p>Organism</p>
+                                </div>
+                                <div>
+                                    <p>Description</p>
+                                </div>
                             </div>
-                            <div>
-                                <p>Organism</p>
+                            <div class="listItemRight deletePlaceholder">
+                                <i class="fa fa-minus fa-3x deleteIcon" aria-hidden="true"></i>
                             </div>
-                            <div>
-                                <p>Description</p>
-                            </div>
-                        </div>
-                        <div class="listItemRight deletePlaceholder">
-                            <i class="fa fa-minus fa-3x deleteIcon" aria-hidden="true"></i>
-                        </div>
 
+                        </div>
                     </div>
-                </div>
 
-            </ul>
+                </ul>
 
                   <ul class="list" id="listSelect">
                       {% for k in userData %}
