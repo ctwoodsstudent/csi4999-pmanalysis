@@ -71,9 +71,83 @@ function moveBackToUnused(item) {
 
 function generateGraph (uiContainer, data){
     var graphContainer = document.createElement("div");
-	graphContainer.innerText = data.conIntensity;
-	graphContainer.className = "graphContainerClass";
+	graphContainer.className = "graphContainer";
+	graphContainer.id = "graphContainerID";
 	uiContainer.append(graphContainer);
+
+	Highcharts.chart('graphContainerID', {
+		chart: {
+			type: 'bar'
+		},
+		title: {
+			text: 'Results'
+		},
+		subtitle: {
+			text: 'Results'
+		},
+		xAxis: {
+			categories: data.sigProbes.slice(200),
+			title: {
+				text: null
+			},
+			scrollbar: {
+				enabled: true
+			},
+			min: 0,
+			max: 10
+		},
+		yAxis: {
+			min: 0,
+			title: {
+				text: 'Probes',
+				align: 'high'
+			},
+			labels: {
+				overflow: 'justify'
+			}
+		},
+		tooltip: {
+			valueSuffix: ''
+		},
+		plotOptions: {
+			bar: {
+				dataLabels: {
+					enabled: true
+				}
+			}
+		},
+		legend: {
+			layout: 'vertical',
+			align: 'right',
+			verticalAlign: 'top',
+			x: -10,
+			y: 20,
+			floating: true,
+			borderWidth: 1,
+			backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+			shadow: true
+		},
+		credits: {
+			enabled: false
+		},
+		series: [{
+			name: 'Control',
+			data: data.conIntensity.slice(200)
+		}, {
+			name: 'Experimental',
+			data: data.expIntensity.slice(200)
+		}]
+	});
+	var cancelControl = document.createElement("input");
+	cancelControl.type = "button";
+	cancelControl.value = "Cancel";
+	cancelControl.id = "IH-cancel";
+	cancelControl.className = "cancelClass";
+	uiContainer.append(cancelControl);
+
+	cancelControl.addEventListener("click", function(e){
+		uiContainer.remove();
+	})
 };
 
 function generateOverlay(fileName, folderName) {
