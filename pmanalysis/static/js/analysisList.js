@@ -88,7 +88,7 @@ function generateGraph (uiContainer, data, folderName){
 		xAxis: {
 			categories: data.sigProbes > 198 ? data.sigProbes.slice(200) : data.sigProbes,
 			title: {
-				text: null
+				text: 'Intensity'
 			},
 			scrollbar: {
 				enabled: true
