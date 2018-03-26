@@ -86,7 +86,7 @@ function generateGraph (uiContainer, data, folderName){
 			text: 'Results'
 		},
 		xAxis: {
-			categories: data.sigProbes.slice(200),
+			categories: data.sigProbes > 198 ? data.sigProbes.slice(200) : data.sigProbes,
 			title: {
 				text: null
 			},
@@ -132,10 +132,10 @@ function generateGraph (uiContainer, data, folderName){
 		},
 		series: [{
 			name: 'Control',
-			data: data.conIntensity.slice(200)
+			data: data.conIntensity > 198 ? data.conIntensity.slice(200) : data.conIntensity
 		}, {
 			name: 'Experimental',
-			data: data.expIntensity.slice(200)
+			data: data.expIntensity > 198 ? data.expIntensity.slice(200) : data.expIntensity
 		}]
 	});
 
