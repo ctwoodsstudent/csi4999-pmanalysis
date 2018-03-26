@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <div class="listedGeoDatasets">
+  <!--  <div class="listedGeoDatasets">
       <h1 style="text-align: center;">GEO DataSet Browser</h1>
       <ul>
         <li><strong>DataSet</strong> {{ Dataset }}</li>
@@ -60,7 +60,79 @@
           <p>No found GEO DataSets at this time, check your connection.</p>
         {% endif %}
       {% endblock %}}
-    </div>
+    </div> -->
+    <div class="sectionContent">
+
+        <div id="GEOData">
+          <input class="search" placeholder="Search" />
+          <button class="sort" data-sort="name">
+            Sort by name
+          </button>
+
+    <!--<ul class="list2" >
+
+        <div class="headerList">
+            <div class="listItemContainer">
+                <div class="listItemLeftHeader">
+                    <div>
+                        <p>Name</p>
+                    </div>
+                    <div>
+                        <p>Organism</p>
+                    </div>
+                    <div>
+                        <p>Description</p>
+                    </div>
+                </div>
+                <div class="listItemRight deletePlaceholder">
+                    <i class="fa fa-minus fa-3x deleteIcon" aria-hidden="true"></i>
+                </div>
+
+            </div>
+        </div>
+
+    </ul> -->
+
+    <ul class="list" id="listSelect">
+        {% for k in GEOData %}
+          <li>
+              <div class="listItemContainer">
+                  <div class="listItemLeft">
+                      <div>
+                          <p class="name">{{ k.Set }}</p>
+                      </div>
+                      <div>
+                          <p class="organism">{{ k.Title }}</p>
+                      </div>
+                      <div>
+                          <p class="description">{{ k.Org }}</p>
+                      </div>
+                      <div>
+                          <p class="description">{{ k.Platform }}</p>
+                      </div>
+                      <div>
+                          <p class="description">{{ k.Series }}</p>
+                      </div>
+                      <div>
+                          <p class="description">{{ k.Num }}</p>
+                      </div>
+                      <div>
+                          <p class="description">{{ k.Con }}</p>
+                      </div>
+                      <div>
+                          <p class="description">{{ k.Pub }}</p>
+                      </div>
+                      <div>
+                          <p class="description">{{ k.Link }}</p>
+                      </div>
+                  </div>
+
+              </div>
+          </li>
+        {% endfor %}
+    </ul>
+  </div>
+</div>
 
 </body>
 </html>
