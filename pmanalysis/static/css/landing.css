@@ -80,6 +80,7 @@
     font-size: 60px;
     transform: translate(-50%, -50%);
     font-family: 'Archivo Black', sans-serif;
+    
 }
 
 .content2{
@@ -165,8 +166,3 @@
 .teamMembers{
     border-radius: 50%;
 }
-
-
-
-
-
