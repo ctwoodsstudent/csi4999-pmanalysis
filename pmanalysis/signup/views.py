@@ -103,8 +103,8 @@ def runTest(request):
     testData = json.loads(request.body)
     control_files = testData["controlFiles"]
     exp_files = testData["experimentalFiles"]
-    pval = testData["pValue"]
-    conf_intv = testData["confidenceInterval"]
+    pval = float(testData["pValue"])
+    conf_intv = float(testData["confidenceInterval"])
     dir_name = testData["dirName"]
 
     pathToFolder = settings.USERFILES_ROOT + "/" + str(request.user.id) + "/" + str(dir_name)
