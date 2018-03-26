@@ -1,11 +1,12 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="fullPage">
 <head>
     <link rel="stylesheet" type="text/css" href="{% static "css/analysis.css" %}">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.7/css/highcharts.css">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri" rel="stylesheet">
     <script type="text/javascript" src="{% static "js/analysisList.js" %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -22,6 +23,8 @@
 
 <body class="bodyContainer" onload="initPage()">
 
+    <img class="backgroundImage" src="{% static 'images/monument-valley-background-do-1600x900.jpg' %}" alt="theBackground" style="position: absolute";>
+
     <div class="navBarContainer">
 
         <div>
@@ -37,7 +40,7 @@
 
         <div class="usersName">
             {% if user.is_authenticated %}
-                User: {{ user.get_username }}
+                Welcome {{ user.get_username }}!
             {% endif %}
             <a class="buttonNav" href="{% url 'landing' %}">My Account</a>
             <a class="buttonNav" href="{% url 'logged_out' %}">Logout</a>
@@ -49,7 +52,7 @@
         <div class="sectionContainer">
 
             <div class="containerTitleDiv">
-                <p>My Data</p>
+                <p>My saved directories</p>
             </div>
 
 
@@ -62,32 +65,32 @@
                 <div id="userData">
                   <input class="search" placeholder="Search" />
                   <button class="sort" data-sort="name">
-                    Sort by name
+                    Sort by directory
                   </button>
 
-            <ul class="list2" >
+                <ul class="list2" >
 
-                <div class="headerList">
-                    <div class="listItemContainer">
-                        <div class="listItemLeftHeader">
-                            <div>
-                                <p>Name</p>
+                    <div class="headerList">
+                        <div class="listItemContainer">
+                            <div class="listItemLeftHeader">
+                                <div>
+                                    <p>Directory Name</p>
+                                </div>
+                                <div>
+                                    <p>Organism</p>
+                                </div>
+                                <div>
+                                    <p>Description</p>
+                                </div>
                             </div>
-                            <div>
-                                <p>Organism</p>
+                            <div class="listItemRight deletePlaceholder">
+                                <i class="fa fa-minus fa-3x deleteIcon" aria-hidden="true"></i>
                             </div>
-                            <div>
-                                <p>Description</p>
-                            </div>
-                        </div>
-                        <div class="listItemRight deletePlaceholder">
-                            <i class="fa fa-minus fa-3x deleteIcon" aria-hidden="true"></i>
-                        </div>
 
+                        </div>
                     </div>
-                </div>
 
-            </ul>
+                </ul>
 
                   <ul class="list" id="listSelect">
                       {% for k in userData %}
@@ -136,7 +139,7 @@
 
                     <br>
 
-                    <input placeholder="Name" type="text" maxlength="20" name="userFileName" required>
+                    <input placeholder="Directory name[No spaces]" type="text" maxlength="20" name="userFileName" required>
 
                     <input placeholder="Organism" type="text" maxlength="50" name="userFileOrg" required>
 
