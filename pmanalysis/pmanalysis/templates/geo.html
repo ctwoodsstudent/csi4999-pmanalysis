@@ -18,10 +18,10 @@
     <div class="navBarContainer">
 
         <div>
-            <a class="buttonNav" href="{% url 'landing' %}">Home</a>
+
             <a class="buttonNav" href="{% url 'analysis' %}">Analysis</a>
             <a class="buttonNav" href="{% url 'geo' %}" id="active" >GEO</a>
-            <a class="buttonNav" href="{% url 'search' %}">Search</a>
+
         </div>
 
         <div>
@@ -70,7 +70,7 @@
         <div id="GEOData">
           <input class="search" placeholder="Search" />
           <button class="sort" data-sort="name">
-            Sort by name
+            Sort by Title
           </button>
 
     <ul class="list2" >
@@ -87,21 +87,21 @@
                     <div>
                         <p>Organism</p>
                     </div>
-                    <div>
+                  <!--  <div>
                         <p>Platform</p>
                     </div>
                     <div>
                         <p>Series</p>
                     </div>
                     <div>
-                        <p>Sample Number</p>
+                        <p>Number of Samples</p>
                     </div>
                     <div>
                         <p>Contributors</p>
                     </div>
                     <div>
                         <p>Publish Date</p>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="listItemRight deletePlaceholder">
                     <i class="fa fa-minus fa-3x deleteIcon" aria-hidden="true"></i>
@@ -126,21 +126,21 @@
                       <div>
                           <p class="Organism">{{ k.Org }}</p>
                       </div>
-                      <div>
+                      <!--<div>
                           <p class="Platform">{{ k.Platform }}</p>
                       </div>
                       <div>
                           <p class="Series">{{ k.Series }}</p>
                       </div>
                       <div>
-                          <p class="Sample Number">{{ k.Num }}</p>
+                          <p class="SampleNumber">{{ k.Num }}</p>
                       </div>
                       <div>
                           <p class="Contributors">{{ k.Con }}</p>
                       </div>
                       <div>
-                          <p class="Publish Date">{{ k.Pub }}</p>
-                      </div>
+                          <p class="PublishDate">{{ k.Pub }}</p>
+                      </div> -->
                   </div>
 
               </div>
