@@ -109,8 +109,9 @@ def runTest(request):
         expIntensity.append(cmean)
         print(probe + "\t" + str(cmean) + "\t" + str(xmean) + "\t" + str(np.absolute(cmean-xmean)))
 
-    return HttpResponse(formatResponse({"success": True}), content_type="application/json")
-    #return render_to_response('analysisList.js', {'conIntensity' : conIntensity, 'expIntensity' : expIntensity, 'sigProbes' : sig_probes})
+    #return HttpResponse(formatResponse({"success": True}), content_type="application/json")
+    result = {'success': True, 'data': {'conIntensity' : conIntensity, 'expIntensity' : expIntensity, 'sigProbes': sig_probes}}
+    return HttpResponse(formatResponse(result), content_type="application/json")
 
 def deleteFolder(request):
     folderName = json.loads(request.body)["folderName"]

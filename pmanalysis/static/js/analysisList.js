@@ -69,7 +69,12 @@ function moveBackToUnused(item) {
 	target.append(elem);
 };
 
-
+function generateGraph (uiContainer, data){
+    var graphContainer = document.createElement("div");
+	graphContainer.innerText = data.conIntensity;
+	graphContainer.className = "graphContainerClass";
+	uiContainer.append(graphContainer);
+};
 
 function generateOverlay(fileName, folderName) {
 	var fileColumns = [];
@@ -263,7 +268,17 @@ function generateOverlay(fileName, folderName) {
 				test: "test1"
 			})
 
-            });
+            }).done(function(response){
+                if (response.success) {
+                    $(uiContainer).empty();
+                    generateGraph(uiContainer, response.data);
+                }
+                else {
+                    alert("Something went wrong");
+                }
+        });
+
+
 	});
 	controlContainer.append(acceptControl);
 
