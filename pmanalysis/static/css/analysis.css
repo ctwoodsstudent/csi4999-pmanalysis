@@ -172,7 +172,7 @@
 .uiBody{
     display: flex;
     flex-direction: column;
-    width: 800px;
+    width: 900px;
     height: 600px;
     z-index: 999;
     background-color: #e8e4e4;
@@ -377,7 +377,7 @@
 }
 
 .graphContainer{
-    width: 100%;
+    width: 90%;
     height: 90%;
     margin: 0 auto;
 }
