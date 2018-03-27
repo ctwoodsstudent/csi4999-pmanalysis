@@ -135,7 +135,7 @@
     padding-top: 25px;
     padding-bottom: 60px;
     border-radius: 5px;
-    background:rgba(0,0,0,0.6);
+    background:rgba(0,0,0,0.8);
 }
 
 .sectionContent{
@@ -188,15 +188,18 @@
 
 .uiBody{
     display: flex;
+    padding-top: 20px;
     flex-direction: column;
     width: 900px;
     height: 600px;
     z-index: 999;
-    background-color: #e8e4e4;
-    border: 1px solid;
+    background-color: #ffffff;
+    border-radius: 4px;
     position: fixed;
-    left: calc(50% - 400px);
+    left: calc(50% - 450px);
     top: calc(50% - 300px);
+    padding-bottom: 30px;
+    /*animation: slide-up 0.7s ease;*/
 }
 
 .headerClass{
@@ -216,24 +219,54 @@
 
 .bothButtons{
     display: flex;
-    justify-content: center;
     margin: 20px;
+    justify-content: space-evenly;
 }
 
 .runClass{
     display: flex;
-    background-color: #87cefa;
+    background-color: #5ac3b2;
+    border: solid #5ac3b2 1px;
+    cursor: pointer;
     font-size: 20px;
-    margin: 10px;
+    transition-duration: 0.4s;
+    margin: 0;
     font-family: 'Hind Siliguri', sans-serif;
+    border-radius: 4px;
+}
+
+.runClass:hover{
+    display: flex;
+    background-color: #ffffff;
+    border: solid #5ac3b2 1px;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0;
+    font-family: 'Hind Siliguri', sans-serif;
+    border-radius: 4px;
 }
 
 .cancelClass{
     display: flex;
+    background-color: slategray;
+    border: solid slategray 1px;
+    cursor: pointer;
     font-size: 20px;
-    margin: 10px;
+    transition-duration: 0.4s;
+    margin: 0;
     font-family: 'Hind Siliguri', sans-serif;
+    border-radius: 4px;
+}
 
+.cancelClass:hover{
+    display: flex;
+    background-color: #ffffff;
+    border: solid slategray 1px;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0;
+    font-family: 'Hind Siliguri', sans-serif;
+    border-radius: 4px;
 }
 
 .pClass{
@@ -402,20 +435,84 @@
 
 .closeClass{
     justify-content: space-evenly;
-    width: 55px;
+    display: flex;
+    background-color: slategray;
+    border: solid slategray 1px;
+    cursor: pointer;
     font-size: 20px;
-    margin: 10px;
+    transition-duration: 0.4s;
+    margin: 0;
     font-family: 'Hind Siliguri', sans-serif;
+    border-radius: 4px;
+}
+
+.closeClass:hover{
+    display: flex;
+    background-color: #ffffff;
+    border: solid slategray 1px;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0;
+    font-family: 'Hind Siliguri', sans-serif;
+    border-radius: 4px;
 }
 
 .exportClass{
-    justify-content: space-evenly;
-    width: 70px;
+    display: flex;
+    background-color: #5ac3b2;
+    border: solid #5ac3b2 1px;
+    cursor: pointer;
     font-size: 20px;
-    margin: 10px;
+    transition-duration: 0.4s;
+    margin: 0;
     font-family: 'Hind Siliguri', sans-serif;
+    border-radius: 4px;
 }
 
-.myButtonDivYay{
+.exportClass:hover{
     display: flex;
+    background-color: #ffffff;
+    border: solid #5ac3b2 1px;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0;
+    font-family: 'Hind Siliguri', sans-serif;
+    border-radius: 4px;
 }
+
+.myButtonContainerYay{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 20px;
+}
+
+.waitingWindow{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translate(100%, 50%);
+    background: rgba(0,0,0,0.9);
+    border-radius: 4px;
+    height: 200px;
+    width: 300px;
+}
+
+.waitingText{
+    justify-content: center;
+    text-align: center;
+    color: whitesmoke;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 30px;
+}
+
+/*@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}*/
