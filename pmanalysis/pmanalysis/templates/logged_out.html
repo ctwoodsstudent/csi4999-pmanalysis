@@ -1,16 +1,42 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="fullPage">
 <head>
+    <link rel="stylesheet" type="text/css" href="{% static "css/lOut.css" %}">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<body class="bodyContainer">
+
+    <img class="backgroundImage" src="{% static 'images/monument-valley-background-do-1600x900.jpg' %}" alt="theBackground" style="position: absolute";>
+
+    <div class="navBarContainer">
+
+        <div>
+
+            <a class="buttonNav" href="{% url 'landing' %}">Home</a>
+            <a class="buttonNav" href="{% url 'signin' %}">Login</a>
+
+        </div>
+
+        <div>
+
+        </div>
+
+        <div>
+
+        </div>
+    </div>
 
 
-Hi {{ user.username }},
-You have been logged out.
-<p></p>
-<a class="buttonNav" href="{% url 'landing' %}">Home</a>
+    <div class="message">
+        {% block content %}
+            You have been logged out. <br>
+            You may return to the home page or log in again.
+        {% endblock %}
+    </div>
 
 </body>
 </html>
