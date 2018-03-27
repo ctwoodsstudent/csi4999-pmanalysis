@@ -1,0 +1,46 @@
+.message{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    font-size: 30px;
+    color: whitesmoke;
+    font-family: 'Hind Siliguri', sans-serif;
+    text-align: center;
+    background: rgba(0,0,0,0.6);
+    transform: translate(28%, 50%);
+    padding: 30px;
+    border-radius: 4px;
+    width: 60%;
+}
+
+.buttonNav:hover{
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 15px;
+    margin: 0px;
+}
+
+.bodyContainer{
+    height: 100%;
+    margin: 0;
+}
+
+.navBarContainer{
+    /*background-color: #3333332b;*/
+    overflow: hidden;
+    /*box-shadow: 2px 2px 18px #434348;*/
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 16px;
+    position: relative;
+}
+
+.buttonNav{
+    color: #434348;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    margin: 15px;
+    font-family: 'Hind Siliguri', sans-serif;
+}
