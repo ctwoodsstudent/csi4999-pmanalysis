@@ -1,19 +1,26 @@
 .signinBody {
     display: flex;
-    justify-content: center;
     margin:0px;
 }
 
 .signinPageContainer{
-    position: absolute;
-    top: 15%;
-    background-color: lightblue;
-    padding: 50px;
+    justify-content: center;
+    position: relative;
+    font-size: 25px;
+    color: whitesmoke;
+    font-family: 'Hind Siliguri', sans-serif;
+    text-align: center;
+    background: rgba(0,0,0,0.6);
+    transform: translate(17%, 50%);
+    padding: 30px;
+    border-radius: 4px;
+    width: 50%;
 }
 
 .content1{
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 25px;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 35px;
+    font-weight: bold;
     text-align: center;
 }
 
@@ -21,16 +28,66 @@
     text-align: center;
 }
 
+.txtField{
+    margin: 20px;
+}
+
+.loginSub{
+    border: solid slategray 1px;
+    background: rgba(0,0,0,0.1);
+    transition-duration: 0.4s;
+    border-radius: 4px;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.loginSub:hover{
+    border: solid slategray 1px;
+    background-color: slategray;
+    border-radius: 4px;
+    color: whitesmoke;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 .error{
-    font-family: 'Ubuntu Condensed', sans-serif;
+    font-family: 'Hind Siliguri', sans-serif;
 }
 
 .signinFields{
-    font-family: 'Ubuntu Condensed', sans-serif;
+    font-family: 'Hind Siliguri', sans-serif;
 }
 
 .signinButton{
     padding: 5px;
     margin: 5px;
-    font-family: 'Ubuntu Condensed', sans-serif;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.navBarContainer{
+    /*background-color: #3333332b;*/
+    overflow: hidden;
+    /*box-shadow: 2px 2px 18px #434348;*/
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 16px;
+    position: relative;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.buttonNav{
+    color: #434348;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    margin: 15px;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.buttonNav:hover{
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 15px;
+    margin: 0px;
 }

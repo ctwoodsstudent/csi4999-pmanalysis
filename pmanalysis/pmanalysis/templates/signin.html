@@ -5,37 +5,52 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="{% static "css/signin.css" %}">
-    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Ubuntu+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <meta charset="UTF-8">
     <title>PM Analysis</title>
 
 </head>
 
-<style>
+<!--<style>
 body {font-family: "Times New Roman", Georgia, Serif;}
 h1,h2,h3,h4,h5,h6 {
     font-family: "Playfair Display";
     letter-spacing: 5px;
 }
-</style>
+</style>-->
 
 <body class="signinBody">
-  <div class="w3-top">
+  <!--<div class="w3-top">
   <div class="w3-bar w3-black w3-padding w3-card" style="letter-spacing:4px;">
-    <a href="{% url 'landing' %}" class="w3-bar-item w3-button">PM Analysis</a>
+    <a href="{% url 'landing' %}" class="w3-bar-item w3-button">PM Analysis</a>-->
     <!-- Right-sided navbar links. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
+   <!-- <div class="w3-right w3-hide-small">
 
       <a href="{% url 'signup' %}" class="w3-bar-item w3-button">Signup</a>
     </div>
   </div>
-  </div>
+  </div>-->
 
-    <img src="{% static 'images/landingPage.jpg' %}" alt="landingPage" style="
-                    width: 100%;
-                    height: 100%;
-                    object-fit:  cover;"/>
+    <img class="backgroundImage" src="{% static 'images/monument-valley-background-do-1600x900.jpg' %}" alt="theBackground" style="position: absolute";>
+
+    <div class="navBarContainer">
+
+        <div>
+
+            <a class="buttonNav" href="{% url 'landing' %}">Home</a>
+            <a class="buttonNav" href="{% url 'signup' %}">Register</a>
+
+        </div>
+
+        <div>
+
+        </div>
+
+        <div>
+
+        </div>
+    </div>
 
     <div class="signinPageContainer">
 
@@ -65,17 +80,17 @@ h1,h2,h3,h4,h5,h6 {
                 <form method="post" action="{% url 'signin' %}">
                 {% csrf_token %}
 
-                    <div>
+                    <div class="txtField">
                       <td>{{ form.username.label_tag }}</td>
                       <td>{{ form.username }}</td>
                     </div>
-                    <div>
+                    <div class="txtField">
                       <td>{{ form.password.label_tag }}</td>
                       <td>{{ form.password }}</td>
                     </div>
 
                     <div>
-                      <input type="submit" value="login" />
+                      <input type="submit" class="loginSub" value="login" />
                       <input type="hidden" name="next" value="{{ next }}" />
                     </div>
 
