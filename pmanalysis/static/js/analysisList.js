@@ -161,7 +161,7 @@ function generateGraph (uiContainer, data, folderName){
 	myButtonDivYay.append(cancelControl);
 
 	cancelControl.addEventListener("click", function(e){
-		uiContainer.remove();
+		$(uiContainer).fadeOut("slow");
 	})
 };
 
@@ -172,6 +172,7 @@ function generateOverlay(fileName, folderName) {
 	var uiContainer = document.createElement("div");
 	uiContainer.className = "uiBody";
 	parent.prepend(uiContainer);
+	$(uiContainer).hide().fadeIn("slow");
 
 	var headerContainer = document.createElement("div");
 	headerContainer.innerText = "Selected directory: " + folderName;
@@ -340,6 +341,16 @@ function generateOverlay(fileName, folderName) {
 			return;
 		}
 
+		var waitingWindow = document.createElement("div");
+		waitingWindow.className = "waitingWindow";
+		uiContainer.append(waitingWindow);
+		$(waitingWindow).hide().fadeIn("slow");
+
+		var waitingText = document.createElement("div");
+		waitingText.className = "waitingText";
+		waitingText.innerText = "Please wait... ";
+		waitingWindow.append(waitingText);
+
 		$.ajax({
 			url: window.location.href + "runTest/",
 			type: "POST",
@@ -360,6 +371,7 @@ function generateOverlay(fileName, folderName) {
             }).done(function(response){
                 if (response.success) {
                     $(uiContainer).empty();
+                    /*$(waitingWindow).remove();*/
                     generateGraph(uiContainer, response.data, folderName);
                 }
                 else {
@@ -381,7 +393,8 @@ function generateOverlay(fileName, folderName) {
 	uiContainer.append(controlContainer);
 
 	cancelControl.addEventListener("click", function(e){
-		uiContainer.remove();
+		$(uiContainer).fadeOut("slow");
+		/*uiContainer.remove();*/
 	})
 };
 
