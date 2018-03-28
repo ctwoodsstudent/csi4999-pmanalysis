@@ -124,7 +124,7 @@ function generateGraph (uiContainer, data, folderName){
 			y: 10,
 			floating: true,
 			borderWidth: 1,
-			backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+			/*backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#f6f1ed'),*/
 			shadow: true
 		},
 		credits: {

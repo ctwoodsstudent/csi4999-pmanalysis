@@ -61,6 +61,7 @@ def about(request):
 def creators(request):
     return render(request, 'creators.html')
 
+@login_required
 def geo(request):
 
     def getGEOItems():

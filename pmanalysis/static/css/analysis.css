@@ -148,7 +148,7 @@
 
 .sort{
     font-family: 'Hind Siliguri', sans-serif;
-    border: solid slategray 1px;
+    border: solid #da9381 1px;
     background: rgba(0,0,0,0.1);
     transition-duration: 0.4s;
     border-radius: 4px;
@@ -157,8 +157,8 @@
 }
 
 .sort:hover{
-    border: solid slategray 1px;
-    background-color: slategray;
+    border: solid #da9381 1px;
+    background-color: #da9381;
     border-radius: 4px;
     color: whitesmoke;
     font-weight: bold;
@@ -191,9 +191,12 @@
     padding-top: 20px;
     flex-direction: column;
     width: 900px;
+    font-weight: bold;
     height: 600px;
     z-index: 999;
-    background-color: #ffffff;
+    color: #333333;
+    background-color: #f6f1ed;
+    opacity: .9;
     border-radius: 4px;
     position: fixed;
     left: calc(50% - 450px);
@@ -225,9 +228,10 @@
 
 .runClass{
     display: flex;
-    background-color: #5ac3b2;
-    border: solid #5ac3b2 1px;
+    background-color: #01827e;
+    border: solid #01827e 1px;
     cursor: pointer;
+    color: #f6f1ed;
     font-size: 20px;
     transition-duration: 0.4s;
     margin: 0;
@@ -237,8 +241,9 @@
 
 .runClass:hover{
     display: flex;
-    background-color: #ffffff;
-    border: solid #5ac3b2 1px;
+    background: #f6f1ed;
+    color: #01827e;
+    border: solid #01827e 1px;
     cursor: pointer;
     font-size: 20px;
     margin: 0;
@@ -251,6 +256,7 @@
     background-color: slategray;
     border: solid slategray 1px;
     cursor: pointer;
+    color: #f6f1ed;
     font-size: 20px;
     transition-duration: 0.4s;
     margin: 0;
@@ -260,7 +266,8 @@
 
 .cancelClass:hover{
     display: flex;
-    background-color: #ffffff;
+    background: #f6f1ed;
+    color: slategray;
     border: solid slategray 1px;
     cursor: pointer;
     font-size: 20px;
@@ -368,7 +375,7 @@
 }
 
 .uploadButton{
-    border: solid slategray 1px;
+    border: solid #da9381 1px;
     background: rgba(0,0,0,0.1);
     padding: 10px;
     transition-duration: 0.4s;
@@ -378,15 +385,15 @@
 }
 
 .uploadButton:hover{
-    border: solid slategray 1px;
+    border: solid #da9381 1px;
     padding: 10px;
-    background-color: slategray;
+    background-color: #da9381;
     border-radius: 4px;
     color: whitesmoke;
     font-weight: bold;
 }
 
-.fileButton{
+/*.fileButton{
     border: solid #3291cd;
     background-color: #3291cd;
     padding: 10px;
@@ -405,7 +412,7 @@
     position: absolute;
     color: black;
     z-index: 1;
-}
+}*/
 
 .fileHideBrowserButton{
     visibility: hidden;
@@ -438,6 +445,7 @@
     display: flex;
     background-color: slategray;
     border: solid slategray 1px;
+    color: #f6f1ed;
     cursor: pointer;
     font-size: 20px;
     transition-duration: 0.4s;
@@ -448,7 +456,7 @@
 
 .closeClass:hover{
     display: flex;
-    background-color: #ffffff;
+    background-color: #f6f1ed;
     border: solid slategray 1px;
     cursor: pointer;
     font-size: 20px;
@@ -457,11 +465,16 @@
     border-radius: 4px;
 }
 
+.highcharts-background {
+    fill: #f6f1ed !important;
+}
+
 .exportClass{
     display: flex;
-    background-color: #5ac3b2;
-    border: solid #5ac3b2 1px;
+    background-color: #01827e;
+    border: solid #01827e 1px;
     cursor: pointer;
+    color: #f6f1ed;
     font-size: 20px;
     transition-duration: 0.4s;
     margin: 0;
@@ -471,8 +484,8 @@
 
 .exportClass:hover{
     display: flex;
-    background-color: #ffffff;
-    border: solid #5ac3b2 1px;
+    background-color: #f6f1ed;
+    border: solid #01827e 1px;
     cursor: pointer;
     font-size: 20px;
     margin: 0;
