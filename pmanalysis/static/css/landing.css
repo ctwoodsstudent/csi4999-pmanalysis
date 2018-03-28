@@ -1,23 +1,74 @@
-.navbarContainer {
+.buttonNav:hover{
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 15px;
+    margin: 0px;
+}
+
+.navBarContainer{
+    /*background-color: #3333332b;*/
+    overflow: hidden;
+    /*box-shadow: 2px 2px 18px #434348;*/
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    background-color: rgba(0,0,0,0);
-    position: fixed;
-    width: 100%;
-}
-.navbarControlContainer {
-	display: flex;
-	flex-direction: row;
-	height: 60px;
+    padding: 14px 16px;
+    position: relative;
 }
 
-.navBarButtonContainer {
-    margin-left: 15px;
-	margin-right: 15px;
+.buttonNav{
+    color: #434348;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    margin: 15px;
+    font-family: 'Hind Siliguri', sans-serif;
 }
 
-.bottomButtonContainer{
+.buttonNavStatic{
+    color: #434348;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    margin: 15px;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.landingBody{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    height: 100%;
+}
+
+.backgroundImage{
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+}
+
+.intro{
+    position: relative;
+    font-size: 30px;
+    color: whitesmoke;
+    font-family: 'Hind Siliguri', sans-serif;
+    text-align: center;
+    transform: translate(28%, 20%);
+    padding: 30px;
+    border-radius: 4px;
+    width: 60%;
+}
+
+.landingContent{
+    display: flex;
+    flex-direction: column;
+}
+
+.fullPage{
+    height: 100%;
+}
+
+/*.bottomButtonContainer{
     margin-left: 15px;
 	margin-right: 15px;
 }
@@ -40,6 +91,20 @@
     font-weight: bold;
 }
 
+.topDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.landHeader{
+    text-align: center;
+}
+
+.landDescr{
+    text-align: center;
+}
+
 .landingButton {
     background: black;
 	border-radius: 10px;
@@ -57,10 +122,8 @@
 }
 
 .landingBodyContainer {
-    width: 100%;
     height: auto;
-    max-height: 500px;
-    object-fit: cover;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     flex-grow: 100;
@@ -166,4 +229,4 @@
 .teamMembers{
     border-radius: 50%;
     width: 200px;
-}
+}*/

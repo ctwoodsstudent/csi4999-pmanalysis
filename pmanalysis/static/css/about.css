@@ -1,0 +1,73 @@
+.buttonNav:hover{
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 15px;
+    margin: 0px;
+}
+
+.navBarContainer{
+    /*background-color: #3333332b;*/
+    overflow: hidden;
+    /*box-shadow: 2px 2px 18px #434348;*/
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 16px;
+    position: relative;
+}
+
+.buttonNav{
+    color: #434348;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    margin: 15px;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+#active{
+    color: black;
+    font-weight: bold;
+    padding: 15px;
+    margin: 0px;
+    font-size: 25px;
+}
+
+.aboutBody{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    height: 100%;
+}
+
+.backgroundImage{
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+}
+
+.fullPage{
+    height: 100%;
+}
+
+.aboutContainer{
+    position: relative;
+}
+
+.whatIsHeader{
+    font-family: 'Hind Siliguri', sans-serif;
+    text-align: center;
+    color: darkslategray;
+}
+
+.howContainer{
+    display: flex;
+    justify-content: space-evenly;
+    font-family: 'Hind Siliguri', sans-serif;
+    color: whitesmoke;
+}
+
+.instructions{
+    width: 300px;
+    text-align: center;
+}

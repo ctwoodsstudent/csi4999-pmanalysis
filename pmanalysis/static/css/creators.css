@@ -1,0 +1,92 @@
+.buttonNav:hover{
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 15px;
+    margin: 0px;
+}
+
+.navBarContainer{
+    /*background-color: #3333332b;*/
+    overflow: hidden;
+    /*box-shadow: 2px 2px 18px #434348;*/
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 16px;
+    position: relative;
+}
+
+.buttonNav{
+    color: #434348;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    margin: 15px;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+#active{
+    color: black;
+    font-weight: bold;
+    padding: 15px;
+    margin: 0px;
+    font-size: 25px;
+}
+
+
+
+.creatorsBody{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    height: 100%;
+}
+
+.backgroundImage{
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+}
+
+.fullPage{
+    height: 100%;
+}
+
+.creatorsImage{
+    text-align: center;
+}
+
+.creatorsContainer{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: space-evenly;
+    padding-top: 2%;
+    margin-left: 5%;
+    border-radius: 4px;
+    margin-top: 5%;
+    width: 90%;
+    padding-bottom: 2%;
+}
+
+.indImage{
+    border-radius: 50%;
+    border: solid #d79684 2px;
+    width: 150px;
+    height: 200px;
+}
+
+.creatorsName{
+    text-align: center;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 30px;
+    color: whitesmoke;
+}
+
+.creatorsBio{
+    text-align: center;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 15px;
+    color: whitesmoke;
+    max-width: 220px;
+}

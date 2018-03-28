@@ -1,89 +1,76 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="fullPage">
 <head>
     <link rel="stylesheet" type="text/css" href="{% static "css/landing.css" %}">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Ubuntu+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri" rel="stylesheet">
     <meta charset="UTF-8">
     <title>PM Analysis</title>
-
 </head>
 
-<style>
-body {font-family: "Times New Roman", Georgia, Serif;}
-h1,h2,h3,h4,h5,h6 {
-    font-family: "Playfair Display";
-    letter-spacing: 5px;
-}
 
-</style>
+<body class="landingBody">
 
-<body style="margin: 0;">
-  <div class="w3-top">
-  <div class="w3-bar w3-black w3-padding w3-card" style="letter-spacing:4px;">
-    <a class="w3-bar-item">PM Analysis</a>
-    <!-- Right-sided navbar links. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
-      <a href="{% url 'signin' %}" class="w3-bar-item w3-button">Login</a>
-      <a href="{% url 'signup' %}" class="w3-bar-item w3-button">Signup</a>
+    <div class="backgroundImgCover">
+
+        <img class="backgroundImage" src="{% static 'images/monument-valley-background-do-1600x900.jpg' %}" alt="theBackground" style="">
+
     </div>
-  </div>
-</div>
-    <!--<div class="navbarContainer">
+
+    <div class="navBarContainer">
+
         <div>
+
+            <a class="buttonNavStatic">PM Analysis</a>
+            <a class="buttonNav" href="{% url 'about' %}">About</a>
+            <a class="buttonNav" href="{% url 'creators' %}">The creators</a>
+
         </div>
-        <div class="navbarControlContainer" style="letter-spacing:4px;">
-            <div class="navBarButtonContainer">
-                <a href="{% url 'signin' %}" class="landingButton">
-                    Log in
-                </a>
-            </div>
-            <div class="navBarButtonContainer">
-                <a href="{% url 'signup' %}" class="landingButton">
-                    Sign up
-                </a>
-            </div>
+
+        <div>
+
+        </div>
+
+        <div>
+
+            <a class="buttonNav" href="{% url 'signin' %}">Login</a>
+            <a class="buttonNav" href="{% url 'signup' %}">Register</a>
+
+        </div>
+    </div>
+
+    <div class="landingContent">
+
+        <div class="intro">
+
+            <h1>PM Analysis</h1>
+
+            <h5>Graphical statistical analysis of phenotype data</h5>
+
         </div>
 
     </div>
--->
 
 
-    <div class="landingBodyControlContainer">
 
-      <div class="landingBodyContainer">
 
-            <div>
 
-                <img src="{% static 'images/landingPage.jpg' %}" alt="landingPage" style="
-                    width: 100%;
-                    height: auto;
-                    max-height:  500px;
-                    object-fit:  cover;"/>
+        <!--<div class="landingBodyContainer">
 
-            </div>
 
-            <div class="content12">
 
-                <h1 class="content">PM Analysis</h1>
+        <div class="whatIs">
 
-                <p class="content2">
-                    Our vision is to create a statistical tool capable of analyzing phenotype
-                    microarrays for biologists.
-                </p>
+             <h1>What is PM Analysis?</h1>
 
-                <p class="content3">
-                    This is still an emerging technology, and we believe advancement will greatly help with the discovery
-                    and analysis of genetic disease.
-                </p>
-
-            </div>
+             <h5>PM analysis is a graphical tool that runs the Welch's T-test on directories you upload right from your own computer.</h5>
 
         </div>
 
-        <div class="landingBodyContainer">
+
+
+
 
             <h1 class="content4">About Us</h1>
 
@@ -187,6 +174,6 @@ h1,h2,h3,h4,h5,h6 {
 
     </div>
 
-    </div>
+    </div>-->
 </body>
 </html>

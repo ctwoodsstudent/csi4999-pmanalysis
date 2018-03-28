@@ -1,0 +1,98 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" class="fullPage">
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static "css/about.css" %}">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>About</title>
+</head>
+
+
+<body class="aboutBody">
+
+    <div class="backgroundImgCover">
+
+        <img class="backgroundImage" src="{% static 'images/monument-valley-background-do-1600x900.jpg' %}" alt="theBackground" style="">
+
+    </div>
+
+    <div class="navBarContainer">
+
+        <div>
+
+            <a class="buttonNav" href="{% url 'landing' %}">PM Analysis</a>
+            <a class="buttonNav" href="{% url 'about' %}" id="active">About</a>
+            <a class="buttonNav" href="{% url 'creators' %}">The creators</a>
+
+        </div>
+
+        <div>
+
+        </div>
+
+        <div>
+
+            <a class="buttonNav" href="{% url 'signin' %}">Login</a>
+            <a class="buttonNav" href="{% url 'signup' %}">Register</a>
+
+        </div>
+    </div>
+
+    <div class="aboutContainer">
+
+        <div class="whatIsHeader">
+
+            <h1>What is PM Analysis?</h1>
+
+            <h3>PM analysis is a tool that runs statistical tests on phenotype data and displays that data in
+                easy to read graphs.</h3>
+
+        </div>
+
+        <div class="howContainer">
+
+            <div class="instructions">
+
+                <h2>How to get started</h2>
+
+                <h3>Get yourself registered! All you need to sign up is a valid email address.</h3>
+
+            </div>
+
+            <div class="instructions">
+
+                <h2>Have an account?</h2>
+
+                <h3>First things first, head on over to our login page! Once you're in, you'll be redirected to our
+                analysis page. This page is specific to you. Make sure you come prepared with directories to upload!</h3>
+
+            </div>
+
+            <div class="instructions">
+
+                <h2>Get testing!</h2>
+
+                <h3>Now you have your very own analysis page! Chose a directory to upload right from this page.
+                Search all your uploaded directories via the search bar at the top of the list. Select a directory by
+                clicking right on it within the list. You can choose all the files you want in experimental and control
+                in the pop up interface. Enter a P-Value, confidence interval, select your test and let us to the rest!</h3>
+
+            </div>
+
+            <div class="instructions">
+
+                <h2>Results?</h2>
+
+                <h3>The results of your test are displayed in a bar graph. If you'd like to keep these results, simply
+                select the drop-down menu in the upper right hand corner and choose a file format!</h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

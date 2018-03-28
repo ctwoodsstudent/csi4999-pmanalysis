@@ -55,6 +55,12 @@ import numpy as np
 def landing(request):
     return render(request, 'landing.html')
 
+def about(request):
+    return render(request, 'about.html')
+
+def creators(request):
+    return render(request, 'creators.html')
+
 def geo(request):
 
     def getGEOItems():
