@@ -5,39 +5,57 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="{% static "css/signup.css" %}">
-    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Ubuntu+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <meta charset="UTF-8">
     <title>PM Analysis</title>
 
 </head>
 
-<style>
+<!--<style>
 body {font-family: "Times New Roman", Georgia, Serif;}
 h1,h2,h3,h4,h5,h6 {
     font-family: "Playfair Display";
     letter-spacing: 5px;
 }
-</style>
+</style>-->
 
-<body class="signupBody" style="margin: 0;">
-  <div class="w3-top">
+
+  <!--<div class="w3-top">
   <div class="w3-bar w3-black w3-padding w3-card" style="letter-spacing:4px;">
-    <a href="{% url 'landing' %}" class="w3-bar-item w3-button">PM Analysis</a>
+    <a href="{% url 'landing' %}" class="w3-bar-item w3-button">PM Analysis</a>-->
     <!-- Right-sided navbar links. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
+    <!--<div class="w3-right w3-hide-small">
 
       <a href="{% url 'signin' %}" class="w3-bar-item w3-button">Login</a>
     </div>
   </div>
-  </div>
+  </div>-->
 
-{% block content %}
+<body class="signupBody">
 
-    <img src="{% static 'images/landingPage.jpg' %}" alt="landingPage" style="
-                    width: 100%;
-                    height: 100%;
-                    object-fit:  cover;"/>
+    <img class="backgroundImage" src="{% static 'images/monument-valley-background-do-1600x900.jpg' %}" alt="theBackground" style="position: absolute";>
+
+    <div class="navBarContainer">
+
+        <div>
+
+            <a class="buttonNav" href="{% url 'landing' %}">Home</a>
+
+        </div>
+
+        <div>
+
+        </div>
+
+        <div>
+
+            <a class="buttonNavStatic">Already have an account?</a>
+            <a class="buttonNav" href="{% url 'signin' %}">Login</a>
+
+        </div>
+    </div>
+
 
     <div class="signupPageContainer">
 
@@ -48,6 +66,8 @@ h1,h2,h3,h4,h5,h6 {
         </div>
 
         <div class="signupPageElement2">
+
+        {% block content %}
 
             <form method="post">
 
@@ -75,7 +95,7 @@ h1,h2,h3,h4,h5,h6 {
 
                 {% endfor %}
 
-                <button type="submit" class="content1">Sign up</button>
+                <button type="submit" class="signupSub">Sign up</button>
 
             </form>
 
