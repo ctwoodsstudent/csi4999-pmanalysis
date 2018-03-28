@@ -6,11 +6,11 @@
     color: whitesmoke;
     font-family: 'Hind Siliguri', sans-serif;
     text-align: center;
-    background: rgba(0,0,0,0.6);
-    transform: translate(28%, 50%);
+    background: rgba(0,0,0,0.1);
+    transform: translate(63%, 50%);
     padding: 30px;
     border-radius: 4px;
-    width: 60%;
+    width: 40%;
 }
 
 .buttonNav:hover{
