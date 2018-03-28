@@ -1,0 +1,147 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" class="fullPage">
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static "css/creators.css" %}">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Creators</title>
+</head>
+
+
+<body class="creatorsBody">
+
+    <div class="backgroundImgCover">
+
+        <img class="backgroundImage" src="{% static 'images/monument-valley-background-do-1600x900.jpg' %}" alt="theBackground">
+
+    </div>
+
+    <div class="navBarContainer">
+
+        <div>
+
+            <a class="buttonNav" href="{% url 'landing' %}">PM Analysis</a>
+            <a class="buttonNav" href="{% url 'about' %}">About</a>
+            <a class="buttonNav" href="{% url 'creators' %}" id="active">The creators</a>
+
+        </div>
+
+        <div>
+
+        </div>
+
+        <div>
+
+            <a class="buttonNav" href="{% url 'signin' %}">Login</a>
+            <a class="buttonNav" href="{% url 'signup' %}">Register</a>
+
+        </div>
+    </div>
+
+    <div class="creatorsContainer">
+
+        <div class="creatorsSection">
+
+            <div class="creatorsImage">
+                <img class="indImage" src="{% static 'images/Valerie.jpg' %}" alt="teamMembers">
+            </div>
+
+            <div class="creatorsName">
+                Valerie
+            </div>
+
+            <div class="creatorsBio">
+
+                Valerie is an IT student at Oakland University, also preparing to graduate in April 2018. Valerie
+                is responsible for part of our front end development and our initial concepts and mockups. She helped to
+                form the whole project into one cohesive plan and is an invaluable team member.
+
+            </div>
+
+        </div>
+
+        <div class="creatorsSection">
+
+            <div class="creatorsImage">
+                <img class="indImage" src="{% static 'images/Kendon.jpg' %}" alt="teamMembers">
+            </div>
+
+            <div class="creatorsName">
+                Kendon
+            </div>
+
+            <div class="creatorsBio">
+
+                Kendon is a CS student at Oakland University. He is our primary back end developer, responsible
+                for making sure everything runs smoothly behind the scenes. Kendon was the team member who really ensured
+                our project took off.
+
+            </div>
+
+        </div>
+
+        <div class="creatorsSection">
+
+            <div class="creatorsImage">
+                <img class="indImage" src="{% static 'images/Courtney.jpg' %}" alt="teamMembers">
+            </div>
+
+            <div class="creatorsName">
+                Courtney
+            </div>
+
+            <div class="creatorsBio">
+
+                Courtney is an IT student at Oakland University who will also graduate in April 2018. Courtney
+                is our front end developer and project manager. She helped to develop the user stores and requirements
+                for PM Analysis as well as working though the development and functionality of what you see here.
+
+            </div>
+
+        </div>
+
+        <div class="creatorsSection">
+
+            <div class="creatorsImage">
+                <img class="indImage" src="{% static 'images/blankTeam.jpg' %}" alt="teamMembers">
+            </div>
+
+            <div class="creatorsName">
+                Quentin
+            </div>
+
+            <div class="creatorsBio">
+
+                Quentin is a CS student at Oakland University, and he is the diving force behind PM Analysis.
+                PM Analysis is the brain child of Quentin, he is following a bio-informatics track and is passionate
+                about the field.
+
+            </div>
+
+        </div>
+
+        <div class="creatorsSection">
+
+            <div class="creatorsImage">
+                <img class="indImage" src="{% static 'images/Larisa.jpg' %}" alt="teamMembers">
+            </div>
+
+            <div class="creatorsName">
+                Larisa
+            </div>
+
+            <div class="creatorsBio">
+
+                Larisa is an IT student at Oakland University. She is one of our front end developers and project
+                managers. She assists with all you see here as the user, as well as with database work.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
