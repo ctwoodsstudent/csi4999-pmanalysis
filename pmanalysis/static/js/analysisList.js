@@ -75,6 +75,11 @@ function generateGraph (uiContainer, data, folderName){
 	graphContainer.id = "graphContainerID";
 	uiContainer.append(graphContainer);
 
+	var categoryLinks = {};
+	for (i = 0; i < 198 || i < data.sigProbes.length; i++) {
+		categoryLinks[data.sigProbes[i]] = 'https://www.ncbi.nlm.nih.gov/probe/?term=' + data.sigProbes[i];
+	}
+
 	var chart = Highcharts.chart('graphContainerID', {
 		chart: {
 			type: 'bar'
@@ -87,6 +92,11 @@ function generateGraph (uiContainer, data, folderName){
 		},
 		xAxis: {
 			categories: data.sigProbes > 198 ? data.sigProbes.slice(200) : data.sigProbes,
+			labels : {
+				formatter: function() {
+					return '<a href="' + categoryLinks[this.value] + '">' + this.value + '</a>';
+				}
+			},
 			title: {
 				text: 'Probes'
 			},
