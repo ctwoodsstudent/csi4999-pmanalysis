@@ -37,7 +37,10 @@ urlpatterns = [
     url(r'^analysis/$', views.analysis, name='analysis'),
     url(r'^analysis/itemsInFolder/$', views.itemsInFolder, name='selectItem'),
     url(r'^analysis/runTest/$', views.runTest, name='runTest'),
-    url(r'^analysis/deleteFolder/$', views.deleteFolder, name='runTest')
+    url(r'^analysis/deleteFolder/$', views.deleteFolder, name='runTest'),
+    url(r'^geo/itemsInGeo/$', views.itemsInGeo, name='selectItem'),
+    url(r'^geo/runTestGeo/$', views.runTestGeo, name='runTest')
+
 
 
 

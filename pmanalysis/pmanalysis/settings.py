@@ -89,6 +89,9 @@ LOGIN_URL = 'signin'
 USERFILES = '/userFiles/'
 USERFILES_ROOT = os.path.join(BASE_DIR, 'userFiles')
 
+GEOFILES = '/GEO DataSets/'
+GEOFILES_ROOT = os.path.join(BASE_DIR, 'GEO DataSets')
+
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 

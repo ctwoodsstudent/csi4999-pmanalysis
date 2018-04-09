@@ -87,6 +87,27 @@ def geo(request):
         'GEOData': GEOData
     })
 
+def itemsInGeo(request):
+    folderName = request.META["HTTP_FILENAME"]
+    query = GEOStudy.objects.all().filter(Dataset=folderName)
+
+    pathToGeo = request.META["HTTP_LINKNAME"]
+
+    path = pathToGeo[:0] + '' + pathToGeo[12:]
+
+    files = []
+    localPath = settings.GEOFILES_ROOT + "/" + str(path)
+    for k in os.listdir(localPath):
+        files.append(k)
+
+    result = {
+        "files": files,
+        "folder": folderName,
+        "success": True
+    }
+
+    return HttpResponse(formatResponse(result), content_type="application/json")
+
     #class GeoDataView(generic.ListView):
         #model = GEOStudy
         #context_object_name = 'geostudy_list'
@@ -105,6 +126,50 @@ def search(request):
 
 def results(request):
     return render(request, 'results.html')
+
+def runTestGeo(request):
+    testData = json.loads(request.body)
+    control_files = testData["controlFiles"]
+    exp_files = testData["experimentalFiles"]
+    pval = float(testData["pValue"])
+    conf_intv = float(testData["confidenceInterval"])
+    dir_name = testData["dirName"]
+
+    pathToGeo = request.META["HTTP_LINKNAME"]
+
+    path = pathToGeo[:0] + '' + pathToGeo[12:]
+
+    localPath = settings.GEOFILES_ROOT + "/" + path;
+
+    con_flst = []
+    for filename in control_files:
+        con_file_location = localPath + "/" + filename
+        con_flst.append(con_file_location)
+
+    exp_flst = []
+    for filename in exp_files:
+        exp_file_location = localPath + "/" + filename
+        exp_flst.append(exp_file_location)
+
+    con_samples = parser.listerTab(con_flst)
+    exp_samples = parser.listerTab(exp_flst)
+
+    tstats, pvals = statician.runTTest(con_samples, exp_samples)
+
+    sig_probes = statician.getTestResults(pvals, list(con_samples.keys()), float(pval))
+    conIntensity = []
+    expIntensity = []
+    print(str(len(sig_probes)))
+    for probe in sig_probes:
+        cmean = round(float(np.mean((con_samples[probe]))), 6)
+        xmean = round(float(np.mean((exp_samples[probe]))), 6)
+        conIntensity.append(xmean)
+        expIntensity.append(cmean)
+        #print(probe + "\t" + str(cmean) + "\t" + str(xmean) + "\t" + str(np.absolute(cmean-xmean)))
+
+    #return HttpResponse(formatResponse({"success": True}), content_type="application/json")
+    result = {'success': True, 'data': {'conIntensity' : conIntensity, 'expIntensity' : expIntensity, 'sigProbes': sig_probes}}
+    return HttpResponse(formatResponse(result), content_type="application/json")
 
 def runTest(request):
     testData = json.loads(request.body)
