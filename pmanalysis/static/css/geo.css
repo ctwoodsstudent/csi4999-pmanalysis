@@ -116,8 +116,12 @@
 .list{
     list-style: none;
     overflow: auto;
-    max-height: 400px;
+    max-height: 300px;
     color: whitesmoke;
+}
+
+#noNeed{
+    display: none;
 }
 
 .list2{
@@ -136,6 +140,10 @@
     padding: 25px;
     border-radius: 5px;
     background:rgba(0,0,0,0.2);
+}
+
+.specificItem{
+    max-width: 250px;
 }
 
 .sectionContent{

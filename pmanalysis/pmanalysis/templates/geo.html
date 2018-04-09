@@ -5,16 +5,22 @@
 <head>
     <link rel="stylesheet" type="text/css" href="{% static "css/geo.css" %}">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.7/css/highcharts.css">
     <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri" rel="stylesheet">
-    <!--<script type="text/javascript" src="{% static "js/analysisList.js" %}"></script>-->
+    <script type="text/javascript" src="{% static "js/geoList.js" %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.7/highcharts.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highstock/6.0.3/highstock.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.7/js/modules/exporting.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.7/js/modules/export-data.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/draggable/1.0.0-beta.5/draggable.bundle.js'></script>
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Ubuntu+Condensed" rel="stylesheet">
     <meta charset="UTF-8">
         <title>GEO</title>
 </head>
-<body class="bodyContainer" style="background-image: url('/static/images/monument-valley-background-do-1600x900.jpg');">
+<body class="bodyContainer" onload="initPage()" style="background-image: url('/static/images/monument-valley-background-do-1600x900.jpg');">
 
     <div class="navBarContainer">
 
@@ -96,9 +102,11 @@
                                     <div>
                                         <p>Organism</p>
                                     </div>
-                                  <!--  <div>
-                                        <p>Platform</p>
+                                    <div id="noNeed">
+                                        <p>Link</p>
                                     </div>
+
+                                    <!--
                                     <div>
                                         <p>Series</p>
                                     </div>
@@ -126,19 +134,19 @@
                           <li>
                               <div class="listItemContainer">
                                   <div class="listItemLeft">
-                                      <div>
+                                      <div class="specificItem">
                                           <p class="Dataset">{{ k.Set }}</p>
                                       </div>
-                                      <div>
+                                      <div class="specificItem">
                                           <p class="Title">{{ k.Title }}</p>
                                       </div>
-                                      <div>
+                                      <div class="specificItem">
                                           <p class="Organism">{{ k.Org }}</p>
                                       </div>
-                                      <!--<div>
-                                          <p class="Platform">{{ k.Platform }}</p>
+                                      <div class="specificItem" id="noNeed">
+                                          <p class="Link">{{ k.Link }}</p>
                                       </div>
-                                      <div>
+                                      <!--<div>
                                           <p class="Series">{{ k.Series }}</p>
                                       </div>
                                       <div>
