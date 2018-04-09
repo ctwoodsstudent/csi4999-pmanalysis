@@ -196,15 +196,20 @@
 
 .uiBody{
     display: flex;
+    padding-top: 20px;
     flex-direction: column;
     width: 900px;
+    font-weight: bold;
     height: 600px;
     z-index: 999;
-    background-color: #e8e4e4;
-    border: 1px solid;
+    color: #333333;
+    background-color: #f6f1ed;
+    opacity: .9;
+    border-radius: 4px;
     position: fixed;
-    left: calc(50% - 400px);
+    left: calc(50% - 450px);
     top: calc(50% - 300px);
+    padding-bottom: 30px;
 }
 
 .headerClass{
@@ -224,25 +229,60 @@
 
 .bothButtons{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     margin: 20px;
 }
 
 .runClass{
     display: flex;
-    background-color: #87cefa;
+    background-color: #01827e;
+    border: solid #01827e 1px;
+    cursor: pointer;
+    color: #f6f1ed;
     font-size: 20px;
-    margin: 10px;
+    transition-duration: 0.4s;
+    margin: 0;
     font-family: 'Hind Siliguri', sans-serif;
+    border-radius: 4px;
+}
+
+.runClass:hover{
+    display: flex;
+    background: #f6f1ed;
+    color: #01827e;
+    border: solid #01827e 1px;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0;
+    font-family: 'Hind Siliguri', sans-serif;
+    border-radius: 4px;
 }
 
 .cancelClass{
     display: flex;
+    background-color: slategray;
+    border: solid slategray 1px;
+    cursor: pointer;
+    color: #f6f1ed;
     font-size: 20px;
-    margin: 10px;
+    transition-duration: 0.4s;
+    margin: 0;
     font-family: 'Hind Siliguri', sans-serif;
-
+    border-radius: 4px;
 }
+
+.cancelClass:hover{
+    display: flex;
+    background: #f6f1ed;
+    color: slategray;
+    border: solid slategray 1px;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0;
+    font-family: 'Hind Siliguri', sans-serif;
+    border-radius: 4px;
+}
+
 
 .pClass{
     display: flex;
@@ -426,4 +466,83 @@
 
 .myButtonDivYay{
     display: flex;
+}
+
+.waitingWindow{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translate(100%, 50%);
+    background: rgba(0,0,0,0.9);
+    border-radius: 4px;
+    height: 200px;
+    width: 300px;
+}
+
+.waitingText{
+    justify-content: center;
+    text-align: center;
+    color: whitesmoke;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 30px;
+}
+
+.closeClass{
+    justify-content: space-evenly;
+    display: flex;
+    background-color: slategray;
+    border: solid slategray 1px;
+    color: #f6f1ed;
+    cursor: pointer;
+    font-size: 20px;
+    transition-duration: 0.4s;
+    margin: 0;
+    font-family: 'Hind Siliguri', sans-serif;
+    border-radius: 4px;
+}
+
+.closeClass:hover{
+    display: flex;
+    background-color: #f6f1ed;
+    border: solid slategray 1px;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0;
+    font-family: 'Hind Siliguri', sans-serif;
+    border-radius: 4px;
+}
+
+.highcharts-background {
+    fill: #f6f1ed !important;
+}
+
+.exportClass{
+    display: flex;
+    background-color: #01827e;
+    border: solid #01827e 1px;
+    cursor: pointer;
+    color: #f6f1ed;
+    font-size: 20px;
+    transition-duration: 0.4s;
+    margin: 0;
+    font-family: 'Hind Siliguri', sans-serif;
+    border-radius: 4px;
+}
+
+.exportClass:hover{
+    display: flex;
+    background-color: #f6f1ed;
+    border: solid #01827e 1px;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0;
+    font-family: 'Hind Siliguri', sans-serif;
+    border-radius: 4px;
+}
+
+.myButtonContainerYay{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 20px;
 }
