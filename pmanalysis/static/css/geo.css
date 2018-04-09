@@ -9,7 +9,7 @@
 }
 
 .buttonNav{
-    color: #434348;
+    color: whitesmoke;
     text-align: center;
     text-decoration: none;
     font-size: 25px;
@@ -18,7 +18,7 @@
 }
 
 .buttonNav:hover{
-    color: black;
+    color: whitesmoke;
     font-weight: bold;
     font-size: 25px;
     padding: 15px;
@@ -26,7 +26,7 @@
 }
 
 #active{
-    color: black;
+    color: whitesmoke;
     font-weight: bold;
     padding: 15px;
     margin: 0px;
@@ -37,6 +37,8 @@
 .bodyContainer{
     margin: 0px;
     height: 100%;
+    background-blend-mode: multiply;
+    background-color: rgba(0,0,0,.4);
 }
 
 .fullPage{
@@ -139,7 +141,6 @@
     width: 70%;
     padding: 25px;
     border-radius: 5px;
-    background:rgba(0,0,0,0.2);
 }
 
 .specificItem{
@@ -152,11 +153,14 @@
 
 .search{
     font-family: 'Hind Siliguri', sans-serif;
+    border-style: none;
+    padding: 5px;
+    border-radius: 4px;
 }
 
 .sort{
     font-family: 'Hind Siliguri', sans-serif;
-    border: solid slategray 1px;
+    border: solid #044c6b 1px;
     background: rgba(0,0,0,0.1);
     transition-duration: 0.4s;
     border-radius: 4px;
@@ -165,8 +169,8 @@
 }
 
 .sort:hover{
-    border: solid slategray 1px;
-    background-color: slategray;
+    border: solid #044c6b 1px;
+    background-color: #044c6b;
     border-radius: 4px;
     color: whitesmoke;
     font-weight: bold;
@@ -175,7 +179,7 @@
 
 .usersName{
     font-family: 'Hind Siliguri', sans-serif;
-    color: #434348;
+    color: whitesmoke;
     font-size: 25px;
 }
 
@@ -235,8 +239,8 @@
 
 .runClass{
     display: flex;
-    background-color: #01827e;
-    border: solid #01827e 1px;
+    background-color: #044c6b;
+    border: solid #044c6b 1px;
     cursor: pointer;
     color: #f6f1ed;
     font-size: 20px;
@@ -249,8 +253,8 @@
 .runClass:hover{
     display: flex;
     background: #f6f1ed;
-    color: #01827e;
-    border: solid #01827e 1px;
+    color: #044c6b;
+    border: solid #044c6b 1px;
     cursor: pointer;
     font-size: 20px;
     margin: 0;
@@ -383,7 +387,7 @@
 }
 
 .uploadButton{
-    border: solid slategray 1px;
+    border: solid #044c6b 1px;
     background: rgba(0,0,0,0.1);
     padding: 10px;
     transition-duration: 0.4s;
@@ -393,9 +397,9 @@
 }
 
 .uploadButton:hover{
-    border: solid slategray 1px;
+    border: solid #044c6b 1px;
     padding: 10px;
-    background-color: slategray;
+    background-color: #044c6b;
     border-radius: 4px;
     color: whitesmoke;
     font-weight: bold;
@@ -450,18 +454,32 @@
 
 .closeClass{
     justify-content: space-evenly;
-    width: 55px;
+    display: flex;
+    background-color: slategray;
+    border: solid slategray 1px;
+    color: #f6f1ed;
+    cursor: pointer;
     font-size: 20px;
-    margin: 10px;
+    transition-duration: 0.4s;
+    margin: 0;
     font-family: 'Hind Siliguri', sans-serif;
+    border-radius: 4px;
 }
 
-.exportClass{
-    justify-content: space-evenly;
-    width: 70px;
+.closeClass:hover{
+    display: flex;
+    background-color: #f6f1ed;
+    border: solid slategray 1px;
+    color: slategray;
+    cursor: pointer;
     font-size: 20px;
-    margin: 10px;
+    margin: 0;
     font-family: 'Hind Siliguri', sans-serif;
+    border-radius: 4px;
+}
+
+.highcharts-background {
+    fill: #f6f1ed !important;
 }
 
 .myButtonDivYay{
@@ -513,14 +531,10 @@
     border-radius: 4px;
 }
 
-.highcharts-background {
-    fill: #f6f1ed !important;
-}
-
 .exportClass{
     display: flex;
-    background-color: #01827e;
-    border: solid #01827e 1px;
+    background-color: #044c6b;
+    border: solid #044c6b 1px;
     cursor: pointer;
     color: #f6f1ed;
     font-size: 20px;
@@ -533,7 +547,8 @@
 .exportClass:hover{
     display: flex;
     background-color: #f6f1ed;
-    border: solid #01827e 1px;
+    border: solid #044c6b 1px;
+    color: #044c6b;
     cursor: pointer;
     font-size: 20px;
     margin: 0;
