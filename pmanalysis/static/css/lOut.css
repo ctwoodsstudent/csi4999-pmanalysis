@@ -6,7 +6,6 @@
     color: whitesmoke;
     font-family: 'Hind Siliguri', sans-serif;
     text-align: center;
-    background: rgba(0,0,0,0.1);
     transform: translate(63%, 50%);
     padding: 30px;
     border-radius: 4px;
@@ -14,7 +13,7 @@
 }
 
 .buttonNav:hover{
-    color: black;
+    color: whitesmoke;
     font-weight: bold;
     font-size: 25px;
     padding: 15px;
@@ -24,6 +23,18 @@
 .bodyContainer{
     height: 100%;
     margin: 0;
+    background-blend-mode: multiply;
+    background-color: rgba(0,0,0,.3);
+}
+
+.backgroundImage{
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+}
+
+.fullPage{
+    height: 100%;
 }
 
 .navBarContainer{
@@ -37,7 +48,7 @@
 }
 
 .buttonNav{
-    color: #434348;
+    color: whitesmoke;
     text-align: center;
     text-decoration: none;
     font-size: 25px;

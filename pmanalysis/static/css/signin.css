@@ -1,6 +1,19 @@
 .signinBody {
     display: flex;
-    margin:0px;
+    margin: 0;
+    height: 100%;
+    background-blend-mode: multiply;
+    background-color: rgba(0,0,0,.3);
+}
+
+.backgroundImage{
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+}
+
+.fullPage{
+    height: 100%;
 }
 
 .signinPageContainer{
@@ -10,8 +23,7 @@
     color: whitesmoke;
     font-family: 'Hind Siliguri', sans-serif;
     text-align: center;
-    background: rgba(0,0,0,0.1);
-    transform: translate(35%, 50%);
+    transform: translate(35%, 20%);
     padding: 30px;
     border-radius: 4px;
     width: 40%;
@@ -33,7 +45,7 @@
 }
 
 .loginSub{
-    border: solid slategray 1px;
+    border: solid whitesmoke 1px;
     background: rgba(0,0,0,0.1);
     transition-duration: 0.4s;
     border-radius: 4px;
@@ -42,10 +54,10 @@
 }
 
 .loginSub:hover{
-    border: solid slategray 1px;
-    background-color: slategray;
+    border: solid whitesmoke 1px;
+    background-color: whitesmoke;
     border-radius: 4px;
-    color: whitesmoke;
+    color: rgba(0,0,0,0.5);
     font-weight: bold;
     cursor: pointer;
 }
@@ -76,7 +88,7 @@
 }
 
 .buttonNav{
-    color: #434348;
+    color: whitesmoke;
     text-align: center;
     text-decoration: none;
     font-size: 25px;
@@ -85,9 +97,25 @@
 }
 
 .buttonNav:hover{
-    color: black;
+    color: whitesmoke;
     font-weight: bold;
     font-size: 25px;
     padding: 15px;
     margin: 0px;
+}
+
+#id_username{
+    border: none;
+    border-radius: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    max-width: 200px;
+}
+
+#id_password{
+    border: none;
+    border-radius: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    max-width: 200px;
 }

@@ -78,7 +78,7 @@ function generateGraph (uiContainer, data, folderName){
 	uiContainer.append(graphContainer);
 
 	var categoryLinks = {};
-	for (i = 0; i < 198 || i < data.sigProbes.length; i++) {
+	for (var i = 0; i < 198 || i < data.sigProbes.length; i++) {
 		categoryLinks[data.sigProbes[i]] = 'https://www.ncbi.nlm.nih.gov/probe/?term=' + data.sigProbes[i];
 	}
 

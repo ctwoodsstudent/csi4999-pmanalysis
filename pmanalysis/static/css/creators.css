@@ -1,5 +1,5 @@
 .buttonNav:hover{
-    color: black;
+    color: whitesmoke;
     font-weight: bold;
     font-size: 25px;
     padding: 15px;
@@ -17,7 +17,7 @@
 }
 
 .buttonNav{
-    color: #434348;
+    color: whitesmoke;
     text-align: center;
     text-decoration: none;
     font-size: 25px;
@@ -26,7 +26,7 @@
 }
 
 #active{
-    color: black;
+    color: whitesmoke;
     font-weight: bold;
     padding: 15px;
     margin: 0px;
@@ -40,6 +40,8 @@
     flex-direction: column;
     margin: 0;
     height: 100%;
+    background-blend-mode: multiply;
+    background-color: rgba(0,0,0,.3);
 }
 
 .backgroundImage{
@@ -71,7 +73,7 @@
 
 .indImage{
     border-radius: 50%;
-    border: solid #d79684 2px;
+    border: solid #2b9299 2px;
     width: 150px;
     height: 200px;
 }

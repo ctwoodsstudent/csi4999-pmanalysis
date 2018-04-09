@@ -1,5 +1,5 @@
 .buttonNav:hover{
-    color: black;
+    color: whitesmoke;
     font-weight: bold;
     font-size: 25px;
     padding: 15px;
@@ -17,7 +17,7 @@
 }
 
 .buttonNav{
-    color: #434348;
+    color: whitesmoke;
     text-align: center;
     text-decoration: none;
     font-size: 25px;
@@ -26,7 +26,7 @@
 }
 
 .buttonNavStatic{
-    color: #434348;
+    color: whitesmoke;
     text-align: center;
     text-decoration: none;
     font-size: 25px;
@@ -39,6 +39,8 @@
     flex-direction: column;
     margin: 0;
     height: 100%;
+    background-blend-mode: multiply;
+    background-color: rgba(0,0,0,.4);
 }
 
 .backgroundImage{
