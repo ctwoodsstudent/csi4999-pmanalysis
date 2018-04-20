@@ -24,6 +24,13 @@ Instructions on how to build PM Analysis project
 6: Install appdirs
     pip install appdirs
 
+7: Navigate to where manage.py is stored in the directory in command prompt/konsole/terminal
+
+    7a: run python manage.py makemigrations
+    7b: run python manage.py migrate
+
+    (You may need to use the command python3 instead of python)
+
 To run the project:
 
 1: Open the command prompt as an administrator
